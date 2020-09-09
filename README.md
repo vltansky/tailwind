@@ -8,9 +8,6 @@ This schematic will add [Tailwind CSS](https://tailwindcss.com/) to your [Angula
 
 ## Usage
 
-<!--TODO: to be removed when new version is released -->
-Please check out the [Note](#note-for-version-100) section
-
 ```
 ng add @ngneat/tailwind
 ```
@@ -21,74 +18,6 @@ In Nx, you can either use `nx add` or `ng add` (same as above) to use the schema
 
 ```
 nx add @ngneat/tailwind
-```
-
-<!--TODO: to be removed when new version is released -->
-## Note for version 1.0.0
-
-`@ngneat/tailwind` will always install the latest version of all the dependencies that are required to setup TailwindCSS with Angular applications. With that said, `postcss-loader` new version has been released recently which contains breaking changes that affect `webpack.config.js` template that the schematics generates.
-
-If you run into issues with `webpack.config.js`, here's how to fix it:
-
-```js
-// before
-const merge = require('webpack-merge');
-
-module.exports = (config) => {
-  const isProd = config.mode === "production";
-  const tailwindConfig = require("./tailwind.config.js")(isProd);
-
-  return merge(config, {
-    module: {
-      rules: [
-        {
-          test: /\.scss$/,
-          loader: 'postcss-loader',
-          options: {
-            ident: 'postcss',
-            syntax: 'postcss-scss',
-            plugins: () => [
-              require('postcss-import'),
-              require('tailwindcss')(tailwindConfig),
-              require('autoprefixer'),
-            ],
-          },
-        },
-      ],
-    },
-  });
-};
-```
-```js
-// after
-const merge = require('webpack-merge');
-
-module.exports = (config) => {
-  const isProd = config.mode === "production";
-  const tailwindConfig = require("./tailwind.config.js")(isProd);
-
-  return merge(config, {
-    module: {
-      rules: [
-        {
-          test: /\.scss$/,
-          loader: 'postcss-loader',
-          options: {
-            postcssOptions: {
-              ident: 'postcss',
-              syntax: 'postcss-scss',
-              plugins: [
-                require('postcss-import'),
-                require('tailwindcss')(tailwindConfig),
-                require('autoprefixer'),
-              ],
-            },
-          },
-        },
-      ],
-    },
-  });
-};
 ```
 
 ## Contributors ✨
