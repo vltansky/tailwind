@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/ngneat/tailwind/compare/v1.0.1...v1.0.2) (2020-10-21)
+
+
+### Bug Fixes
+
+* add postcss to deps array ([77dc498](https://github.com/ngneat/tailwind/commit/77dc4986e867372c6fa70c5c81041c6cc83697ec)), closes [#13](https://github.com/ngneat/tailwind/issues/13)
+
 ### [1.0.1](https://github.com/ngneat/tailwind/compare/v1.0.0...v1.0.1) (2020-09-09)
 
 
