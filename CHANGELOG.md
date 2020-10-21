@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/ngneat/tailwind/compare/v1.0.4...v1.0.5) (2020-10-21)
+
+
+### Bug Fixes
+
+* fix publish action run steps ([8131716](https://github.com/ngneat/tailwind/commit/8131716f0ed45f23a71977fa7dc2c500aeda3718))
+
 ### [1.0.4](https://github.com/ngneat/tailwind/compare/v1.0.3...v1.0.4) (2020-10-21)
 
 
