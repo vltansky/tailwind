@@ -1,8 +1,23 @@
 import { normalize } from '@angular-devkit/core';
-import { apply, applyTemplates, chain, mergeWith, move, Rule, url } from '@angular-devkit/schematics';
-import { getProjectFromWorkspace, getProjectStyleFile, getTargetsByBuilderName } from '@angular/cdk/schematics';
+import {
+  apply,
+  applyTemplates,
+  chain,
+  mergeWith,
+  move,
+  Rule,
+  url,
+} from '@angular-devkit/schematics';
+import {
+  getProjectFromWorkspace,
+  getProjectStyleFile,
+  getTargetsByBuilderName,
+} from '@angular/cdk/schematics';
 import { InsertChange } from '@schematics/angular/utility/change';
-import { getWorkspace, updateWorkspace } from '@schematics/angular/utility/config';
+import {
+  getWorkspace,
+  updateWorkspace,
+} from '@schematics/angular/utility/config';
 import { Builders } from '@schematics/angular/utility/workspace-models';
 import { Schema } from './schema';
 
@@ -12,7 +27,7 @@ function addConfigFiles(options: Schema): Rule {
       applyTemplates({
         cssFlavor: options.cssFlavor,
       }),
-      move(normalize('./'))
+      move(normalize('./')),
     ]);
 
     return mergeWith(templateSource)(tree, context);
@@ -24,7 +39,10 @@ function updateAngularJson(options: Schema): Rule {
     const workspace = getWorkspace(tree);
     const project = getProjectFromWorkspace(workspace, options.project);
     const browserTargets = getTargetsByBuilderName(project, Builders.Browser);
-    const devServerTargets = getTargetsByBuilderName(project, Builders.DevServer);
+    const devServerTargets = getTargetsByBuilderName(
+      project,
+      Builders.DevServer,
+    );
 
     for (const devServerTarget of devServerTargets) {
       devServerTarget.builder = '@angular-builders/custom-webpack:dev-server';
@@ -34,9 +52,9 @@ function updateAngularJson(options: Schema): Rule {
       browserTarget.builder = '@angular-builders/custom-webpack:browser';
       browserTarget.options = {
         customWebpackConfig: {
-          path: 'webpack.config.js'
+          path: 'webpack.config.js',
         },
-        ...browserTarget.options as any
+        ...(browserTarget.options as any),
       };
     }
 
@@ -51,7 +69,9 @@ function updateProjectStylesFile(options: Schema): Rule {
     const stylePath = getProjectStyleFile(project, options.cssFlavor);
 
     if (!stylePath) {
-      context.logger.error(`Cannot update project styles file: Style path not found`);
+      context.logger.error(
+        `Cannot update project styles file: Style path not found`,
+      );
       return tree;
     }
 
@@ -77,7 +97,7 @@ export default function (options: Schema): Rule {
     return chain([
       addConfigFiles(options),
       updateAngularJson(options),
-      updateProjectStylesFile(options)
+      updateProjectStylesFile(options),
     ])(tree, context);
   };
 }

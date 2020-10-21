@@ -1,4 +1,7 @@
-import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/testing';
+import {
+  SchematicTestRunner,
+  UnitTestTree,
+} from '@angular-devkit/schematics/testing';
 import * as path from 'path';
 import { Schema } from './schema';
 
@@ -21,8 +24,13 @@ const defaultAppOptions = {
   skipTests: false,
 };
 
-
-const defaultPackages = ['@angular-builders/custom-webpack', 'postcss-import', 'postcss-loader', 'tailwindcss'];
+const defaultPackages = [
+  'postcss', // TODO: to be removed when tailwindcss has PostCSS 8 as a dependency instead of 7
+  '@angular-builders/custom-webpack',
+  'postcss-import',
+  'postcss-loader',
+  'tailwindcss',
+];
 
 describe('ng add function', () => {
   let appTree: UnitTestTree;
@@ -34,12 +42,15 @@ describe('ng add function', () => {
       cssFlavor: 'css',
       project: 'bar',
     };
-    schematicRunner = new SchematicTestRunner('tailwind-schematics', collectionPath);
+    schematicRunner = new SchematicTestRunner(
+      'tailwind-schematics',
+      collectionPath,
+    );
     appTree = await schematicRunner
       .runExternalSchematicAsync(
         '@schematics/angular',
         'workspace',
-        workspaceOptions
+        workspaceOptions,
       )
       .toPromise();
 
@@ -48,19 +59,21 @@ describe('ng add function', () => {
         '@schematics/angular',
         'application',
         defaultAppOptions,
-        appTree
+        appTree,
       )
       .toPromise();
   });
 
   function assertDefaultPackages(packageJson: string) {
-    defaultPackages.forEach(pkg => {
+    defaultPackages.forEach((pkg) => {
       expect(packageJson).toContain(pkg);
     });
   }
 
   it('should add proper packages to devDependencies with default options', async () => {
-    const tree = await schematicRunner.runSchematicAsync('ng-add', options, appTree).toPromise();
+    const tree = await schematicRunner
+      .runSchematicAsync('ng-add', options, appTree)
+      .toPromise();
     const packageJson = tree.readContent('/package.json');
     expect(packageJson).toBeTruthy();
     assertDefaultPackages(packageJson);
@@ -69,11 +82,13 @@ describe('ng add function', () => {
   it('should add proper packages to devDependencies with each cssFlavor', async () => {
     for (let flavor of ['scss', 'less', 'sass', 'styl']) {
       options.cssFlavor = flavor;
-      const tree = await schematicRunner.runSchematicAsync('ng-add', options, appTree).toPromise();
+      const tree = await schematicRunner
+        .runSchematicAsync('ng-add', options, appTree)
+        .toPromise();
       const packageJson = tree.readContent('/package.json');
       expect(packageJson).toBeTruthy();
       assertDefaultPackages(packageJson);
-      expect(packageJson).toContain(`postcss-${ flavor }`);
+      expect(packageJson).toContain(`postcss-${flavor}`);
     }
   });
 });
