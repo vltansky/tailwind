@@ -20,6 +20,16 @@ In Nx, you can either use `nx add` or `ng add` (same as above) to use the schema
 nx add @ngneat/tailwind
 ```
 
+#### Caveats
+
+This schematic only works with **Nx Workspace** powered by [AngularCLI](https://cli.angular.io/) at the moment. If you rely on **Nx CLI** with `workspace.json`, this schematic won't work correctly. This is due to some discrepancies between `NxCLI` helpers and `AngularCLI` helpers which are quite hard to combine. (Discussed [here](https://github.com/ngneat/tailwind/issues/6))
+
+## Purge
+
+`@ngneat/tailwind` uses built-in `purge` functionality by `tailwindcss` (under the hood, it is [postcss-purgecss](https://github.com/FullHuman/purgecss/tree/master/packages/postcss-purgecss)). By default, `@ngneat/tailwind` sets the `content` to any **HTML** and any **TS** files in the project.
+
+This behavior can be modified as the consumers see fit.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
