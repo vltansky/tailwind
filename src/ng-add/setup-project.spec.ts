@@ -86,10 +86,12 @@ describe('setup-project', () => {
       .runSchematicAsync('ng-add-setup-project', options, appTree)
       .toPromise();
     const styleContent = tree.readContent('/projects/bar/src/styles.css');
-    ["@import 'tailwindcss/base'", "@import 'tailwindcss/utilities'"].forEach(
-      (i) => {
-        expect(styleContent).toContain(i);
-      },
-    );
+    [
+      "@import 'tailwindcss/base'",
+      "@import 'tailwindcss/utilities'",
+      "@import 'tailwindcss/components'",
+    ].forEach((i) => {
+      expect(styleContent).toContain(i);
+    });
   });
 });
