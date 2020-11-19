@@ -19,6 +19,7 @@ function addPackageJsonDependencies(options: Schema): Rule {
     'tailwindcss',
     'postcss-import',
     'postcss-loader',
+    'autoprefixer',
     '@angular-builders/custom-webpack',
   ];
 
