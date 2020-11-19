@@ -15,7 +15,7 @@ import { getLatestNodeVersion, NodePackage } from './utils';
 
 function addPackageJsonDependencies(options: Schema): Rule {
   const deps = [
-    'postcss', // TODO: to be removed when tailwindcss has PostCSS 8 as a dependency instead of 7
+    'postcss',
     'tailwindcss',
     'postcss-import',
     'postcss-loader',
