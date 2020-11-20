@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/ngneat/tailwind/compare/v1.0.8...v1.1.0) (2020-11-20)
+
+
+### Features
+
+* adds autoprefixer ([e081912](https://github.com/ngneat/tailwind/commit/e0819124d4bef4c226d30fa9a7d05bced7974f9a))
+* Adds darkMode to the template ([af6cc0d](https://github.com/ngneat/tailwind/commit/af6cc0dfb5ef94490b5272619191bc63aac4739b))
+
 ### [1.0.8](https://github.com/ngneat/tailwind/compare/v1.0.7...v1.0.8) (2020-10-28)
 
 
