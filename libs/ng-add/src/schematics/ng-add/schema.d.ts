@@ -1,5 +1,12 @@
+export enum CssStyle {
+  Css = 'css',
+  Scss = 'scss',
+  Sass = 'sass',
+  Less = 'less',
+  Stylus = 'styl',
+}
+
 export interface NgAddSchematicSchema {
-  name: string;
-  tags?: string;
-  directory?: string;
+  project: string;
+  style: CssStyle;
 }

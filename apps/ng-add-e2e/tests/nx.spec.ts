@@ -1,11 +1,18 @@
-import {ensureNxProject, runCommandAsync, runNxCommandAsync,} from '@nrwl/nx-plugin/testing';
-import {detectPackageManager, getPackageManagerInstallCommand} from "@nrwl/workspace/src/utils/detect-package-manager";
+import {
+  ensureNxProject,
+  runCommandAsync,
+  runNxCommandAsync,
+} from '@nrwl/nx-plugin/testing';
+import {
+  detectPackageManager,
+  getPackageManagerInstallCommand,
+} from '@nrwl/workspace/src/utils/detect-package-manager';
 
 jest.setTimeout(30000000);
 
 describe('nx e2e', () => {
   it('should work', async (done) => {
-    ensureNxProject('@ngneat/tailwindx', 'dist/libs/ng-add');
+    ensureNxProject('@ngneat/tailwind', 'dist/libs/ng-add');
 
     await runCommandAsync(
       `${getPackageManagerInstallCommand(
