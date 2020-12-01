@@ -22,5 +22,13 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "ng-add": {
+      "tags": []
+    },
+    "ng-add-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ng-add"]
+    }
+  }
 }
