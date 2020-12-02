@@ -29,6 +29,13 @@
     "ng-add-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-add"]
+    },
+    "nx-setup": {
+      "tags": []
+    },
+    "nx-setup-e2e": {
+      "tags": [],
+      "implicitDependencies": ["nx-setup"]
     }
   }
 }

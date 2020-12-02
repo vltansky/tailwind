@@ -1,12 +1,9 @@
-import {
-  cleanup,
-  runCommandAsync,
-  runNxCommandAsync,
-} from '@nrwl/nx-plugin/testing';
+import { runCommandAsync, runNxCommandAsync } from '@nrwl/nx-plugin/testing';
 import {
   detectPackageManager,
   getPackageManagerInstallCommand,
 } from '@nrwl/workspace/src/utils/detect-package-manager';
+import { execSync } from 'child_process';
 import { ensureNgProject, ensureNxProject } from '../utils';
 
 jest.setTimeout(999999);
@@ -16,7 +13,7 @@ describe('nx e2e', () => {
   //   cleanup();
   // });
 
-  it('should work with nx', async (done) => {
+  fit('should work with nx', async (done) => {
     ensureNxProject('@ngneat/tailwind', 'dist/libs/ng-add');
 
     await runCommandAsync(
@@ -54,9 +51,9 @@ describe('nx e2e', () => {
     done();
   });
 
-  fit('should work with angular cli', async (done) => {
+  it('should work with angular cli', async (done) => {
     ensureNgProject('@ngneat/tailwind', 'dist/libs/ng-add');
-    await runNxCommandAsync(`generate @ngneat/tailwind:ng-add`);
+    execSync(`cd tmp/nx-e2e/proj && ng generate @ngneat/tailwind:ng-add`);
 
     done();
   });

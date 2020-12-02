@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngneat/tailwind": ["libs/ng-add/src/index.ts"]
+      "@ngneat/tailwind": ["libs/ng-add/src/index.ts"],
+      "tailwind/nx-setup": ["libs/nx-setup/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

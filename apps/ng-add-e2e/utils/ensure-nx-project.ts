@@ -95,11 +95,10 @@ export function runNgNewCommand() {
   // );
   try {
     execSync(
-      `node ../../node_modules/@angular/cli/bin/ng new proj --skip-git --skip-install --minimal --defaults`,
-      {
-        cwd: localTmpDir,
-      }
+      'cd .. && rm -rf proj && npx @angular/cli new proj --defaults --minimal --routing=false --skip-git --skip-install --style=css'
     );
+    execSync(`mv ../proj ${localTmpDir}`);
+    // execSync()
   } catch (e) {
     console.log('err', e);
   }

@@ -15,25 +15,36 @@ import {
   getProjectGraphFromHost,
   getWorkspace,
   InsertChange,
+  ProjectGraph,
+  ProjectGraphNode,
   projectRootDir,
   ProjectType,
   updateWorkspace,
 } from '@nrwl/workspace';
 import { appsDir, libsDir } from '@nrwl/workspace/src/utils/ast-utils';
 import { getWorkspace as getNgWorkspace } from '@schematics/angular/utility/config';
-import {
-  getDefaultProjectFromGraph,
-  getLatestNodeVersion,
-  getTailwindImports,
-} from '../../utils';
-import { NgAddSchematicSchema } from './schema';
+import { NxSetupSchematicSchema } from './schema';
+
+export function getDefaultProjectFromGraph(
+  graph: ProjectGraph,
+  projectName?: string
+): ProjectGraphNode {
+  if (projectName) return graph.nodes[projectName];
+  return Object.values(graph.nodes).find(
+    (node) =>
+      node.data.projectType === ProjectType.Application &&
+      Object.values(node.data.architect).some((target) =>
+        target.builder.includes('angular')
+      )
+  );
+}
 
 /**
  * Depending on your needs, you can change this to either `Library` or `Application`
  */
 const projectType = ProjectType.Application;
 
-interface NormalizedSchema extends NgAddSchematicSchema {
+interface NormalizedSchema extends NxSetupSchematicSchema {
   projectName: string;
   projectRoot: string;
   projectDirectory: string;

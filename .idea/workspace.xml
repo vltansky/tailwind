@@ -23,13 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc20ce5b-562c-46ed-aae8-62138c006c2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/ng-add-e2e/utils/ensure-nx-project.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/ng-add-e2e/utils/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/tests/nx-ng.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/tests/nx.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ng-add-e2e/tests/nx.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/utils/ensure-nx-project.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ng-add-e2e/utils/ensure-nx-project.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schematic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schematic.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nx.json" beforeDir="false" afterPath="$PROJECT_DIR$/nx.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.base.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +137,7 @@
       <workItem from="1605537872256" duration="6555000" />
       <workItem from="1605583566405" duration="4660000" />
       <workItem from="1605628300290" duration="1537000" />
-      <workItem from="1606862905075" duration="11808000" />
+      <workItem from="1606862905075" duration="23300000" />
     </task>
     <servers />
   </component>
