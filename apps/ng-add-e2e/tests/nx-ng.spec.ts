@@ -10,7 +10,11 @@ import {
 
 jest.setTimeout(999999);
 
-describe('nx e2e', () => {
+function ensureNxNgProject() {
+
+}
+
+describe('nx-ng e2e', () => {
   it('should work', async (done) => {
     ensureNxProject('@ngneat/tailwind', 'dist/libs/ng-add');
 
