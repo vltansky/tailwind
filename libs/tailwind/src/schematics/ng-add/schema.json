@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "id": "NgAdd",
+  "title": "Schematics to setup Tailwind for Angular applications in AngularCLI/Nx Workspace (with Angular CLI)",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The project name to add Tailwind",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-prompt": "What project would you like to use? (skip to use default project)"
+    },
+    "style": {
+      "description": "The file extension or preprocessor to use for style files.",
+      "type": "string",
+      "default": "css",
+      "enum": [
+        "css",
+        "scss",
+        "sass"
+      ],
+      "x-prompt": {
+        "message": "Which stylesheet flavor would you like to use? (CSS, SCSS, SASS)",
+        "type": "list",
+        "items": [
+          {
+            "value": "css",
+            "label": "CSS"
+          },
+          {
+            "value": "scss",
+            "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]"
+          },
+          {
+            "value": "sass",
+            "label": "Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]"
+          }
+        ]
+      }
+    }
+  }
+}

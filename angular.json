@@ -1,130 +1,96 @@
 {
   "version": 1,
   "projects": {
-    "ng-add": {
-      "root": "libs/ng-add",
-      "sourceRoot": "libs/ng-add/src",
+    "tailwind": {
+      "root": "libs/tailwind",
+      "sourceRoot": "libs/tailwind/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ng-add/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/tailwind/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ng-add/jest.config.js",
+            "jestConfig": "libs/tailwind/jest.config.js",
             "passWithNoTests": true
           }
         },
         "build": {
           "builder": "@nrwl/node:package",
           "options": {
-            "outputPath": "dist/libs/ng-add",
-            "tsConfig": "libs/ng-add/tsconfig.lib.json",
-            "packageJson": "libs/ng-add/package.json",
-            "main": "libs/ng-add/src/index.ts",
+            "outputPath": "dist/libs/tailwind",
+            "tsConfig": "libs/tailwind/tsconfig.lib.json",
+            "packageJson": "libs/tailwind/package.json",
+            "main": "libs/tailwind/src/index.ts",
             "assets": [
-              "libs/ng-add/*.md",
+              "libs/tailwind/*.md",
               {
-                "input": "./libs/ng-add/src",
+                "input": "./libs/tailwind/src",
                 "glob": "**/*.!(ts)",
                 "output": "./src"
               },
               {
-                "input": "./libs/ng-add",
+                "input": "./libs/tailwind",
                 "glob": "collection.json",
                 "output": "."
               },
               {
-                "input": "./libs/ng-add",
+                "input": "./libs/tailwind",
                 "glob": "builders.json",
                 "output": "."
               }
             ]
           }
-        }
-      }
-    },
-    "ng-add-e2e": {
-      "projectType": "application",
-      "root": "apps/ng-add-e2e",
-      "sourceRoot": "apps/ng-add-e2e/src",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/nx-plugin:e2e",
-          "options": {
-            "target": "ng-add:build",
-            "npmPackageName": "@tailwind/ng-add",
-            "pluginOutputPath": "dist/libs/ng-add",
-            "jestConfig": "apps/ng-add-e2e/jest.config.js"
-          }
-        }
-      }
-    },
-    "nx-setup": {
-      "root": "libs/nx-setup",
-      "sourceRoot": "libs/nx-setup/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/nx-setup/**/*.ts"]
-          }
         },
-        "test": {
-          "builder": "@nrwl/jest:jest",
+        "build-copy": {
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "jestConfig": "libs/nx-setup/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "build": {
-          "builder": "@nrwl/node:package",
-          "options": {
-            "outputPath": "dist/libs/nx-setup",
-            "tsConfig": "libs/nx-setup/tsconfig.lib.json",
-            "packageJson": "libs/nx-setup/package.json",
-            "main": "libs/nx-setup/src/index.ts",
-            "assets": [
-              "libs/nx-setup/*.md",
+            "commands": [
               {
-                "input": "./libs/nx-setup/src",
-                "glob": "**/*.!(ts)",
-                "output": "./src"
+                "command": "npx ng run tailwind:build"
               },
               {
-                "input": "./libs/nx-setup",
-                "glob": "collection.json",
-                "output": "."
-              },
-              {
-                "input": "./libs/nx-setup",
-                "glob": "builders.json",
-                "output": "."
+                "command": "npx ng run tailwind:copy-template"
               }
-            ]
+            ],
+            "parallel": false
+          }
+        },
+        "copy-template": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "cp -r dist/libs/tailwind/src/schematics/files dist/libs/tailwind/src/schematics/ng-add"
+              },
+              {
+                "command": "cp -r dist/libs/tailwind/src/schematics/files dist/libs/tailwind/src/schematics/nx-setup"
+              }
+            ],
+            "parallel": true
           }
         }
       }
     },
-    "nx-setup-e2e": {
+    "tailwind-e2e": {
       "projectType": "application",
-      "root": "apps/nx-setup-e2e",
-      "sourceRoot": "apps/nx-setup-e2e/src",
+      "root": "apps/tailwind-e2e",
+      "sourceRoot": "apps/tailwind-e2e/src",
       "architect": {
         "e2e": {
           "builder": "@nrwl/nx-plugin:e2e",
           "options": {
-            "target": "nx-setup:build",
-            "npmPackageName": "@tailwind/nx-setup",
-            "pluginOutputPath": "dist/libs/nx-setup",
-            "jestConfig": "apps/nx-setup-e2e/jest.config.js"
+            "target": "tailwind:build-copy",
+            "npmPackageName": "@ngneat/tailwind",
+            "pluginOutputPath": "dist/libs/tailwind",
+            "jestConfig": "apps/tailwind-e2e/jest.config.js"
           }
         }
       }

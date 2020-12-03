@@ -23,16 +23,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc20ce5b-562c-46ed-aae8-62138c006c2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/tailwind-e2e/utils/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/constants/dependencies.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/constants/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/ng-add/ng-add.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/nx-setup/nx-setup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/schema.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/add-config-files.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/update-project-root-styles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/update-workspace-targets.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/tests/nx.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ng-add-e2e/tests/nx.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/utils/ensure-nx-project.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ng-add-e2e/utils/ensure-nx-project.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schematic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schematic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nx.json" beforeDir="false" afterPath="$PROJECT_DIR$/nx.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.base.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/ng-add/ng-add.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/tests/nx.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/utils/ensure-nx-project.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/tailwind-e2e/utils/ensure-project.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ng-add-e2e/utils/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nx-setup-e2e/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nx-setup-e2e/tests/nx-setup.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nx-setup-e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nx-setup-e2e/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorate-angular-cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.preset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/nx-setup/nx-setup.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/builders.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/builders/build/builder.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/builders/build/builder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/builders/build/schema.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/builders/build/schema.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/files/tailwind.config.js.template" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/files/tailwind.config.js.template" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/files/webpack.config.js.template" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/files/webpack.config.js.template" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schema.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/ng-add/schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schematic.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/schematics/ng-add/schematic.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/utils/get-default-project-from-graph.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/utils/get-latest-node-version.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/get-latest-node-version.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/utils/get-tailwind-imports.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/get-tailwind-imports.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/src/utils/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/tsconfig.lib.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ng-add/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/builders.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/builders/build/builder.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/builders/build/builder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/builders/build/schema.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/builders/build/schema.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/schematics/nx-setup/files/src/index.ts.template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/schematics/nx-setup/schema.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/schematics/nx-setup/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/nx-setup/schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/schematics/nx-setup/schematic.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/src/schematics/nx-setup/schematic.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/tsconfig.lib.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/nx-setup/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nx.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/schematics/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/tsconfig.tools.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +157,7 @@
       <recent name="$PROJECT_DIR$/libs/utils/src/lib/get-latest-node-version.util.ts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/legacy" />
     </key>
   </component>
@@ -137,7 +210,8 @@
       <workItem from="1605537872256" duration="6555000" />
       <workItem from="1605583566405" duration="4660000" />
       <workItem from="1605628300290" duration="1537000" />
-      <workItem from="1606862905075" duration="23300000" />
+      <workItem from="1606862905075" duration="31298000" />
+      <workItem from="1606970391773" duration="649000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,5 @@
 {
-  "npmScope": "tailwind",
+  "npmScope": "ngneat",
   "affected": {
     "defaultBase": "master"
   },
@@ -23,19 +23,12 @@
     }
   },
   "projects": {
-    "ng-add": {
+    "tailwind": {
       "tags": []
     },
-    "ng-add-e2e": {
+    "tailwind-e2e": {
       "tags": [],
-      "implicitDependencies": ["ng-add"]
-    },
-    "nx-setup": {
-      "tags": []
-    },
-    "nx-setup-e2e": {
-      "tags": [],
-      "implicitDependencies": ["nx-setup"]
+      "implicitDependencies": ["tailwind"]
     }
   }
 }
