@@ -1,4 +1,11 @@
 CHANGELOG
+### [3.0.1](https://github.com/ngneat/tailwind/compare/v3.0.0...v3.0.1) (2020-12-03)
+
+
+### CI/CD
+
+* update test actions ([2646539](https://github.com/ngneat/tailwind/commit/26465395e42b02aea848a98d094327fe1c34a018))
+
 ## [3.0.0](https://github.com/ngneat/tailwind/compare/v1.1.0...v3.0.0) (2020-12-03)
 
 
