@@ -1,4 +1,4 @@
-import * as pacote from 'pacote';
+import { get } from 'http';
 
 export interface NodePackage {
   name: string;
@@ -9,11 +9,29 @@ export interface NodePackage {
  * Attempt to retrieve the metadata of the package name.
  * If no metadata found, will use "latest" as version for the package.
  *
- * @param pkgName
  * @return {Promise<NodePackage>}
+ * @param packageName
  */
-export function getLatestNodeVersion(pkgName: string): Promise<NodePackage> {
+export function getLatestNodeVersion(
+  packageName: string
+): Promise<NodePackage> {
   const DEFAULT_VERSION = 'latest';
+
+  return new Promise((resolve) => {
+    return get(`http://registry.npmjs.org/${packageName}`, (res) => {
+      let rawData = '';
+      res.on('data', (chunk) => (rawData += chunk));
+      res.on('end', () => {
+        try {
+          const response = JSON.parse(rawData);
+          const version = (response && response['dist-tags']) || {};
+          resolve(buildPackage(packageName, version.latest));
+        } catch (e) {
+          resolve(buildPackage(packageName));
+        }
+      });
+    }).on('error', () => resolve(buildPackage(packageName)));
+  });
 
   function buildPackage(
     name: string,
@@ -21,16 +39,4 @@ export function getLatestNodeVersion(pkgName: string): Promise<NodePackage> {
   ): NodePackage {
     return { name, version };
   }
-
-  return pacote
-    .manifest(pkgName)
-    .then((manifest) => buildPackage(pkgName, manifest.version))
-    .catch((err) => {
-      console.warn(
-        `Error fetching metadata for ${pkgName} with ${
-          err.message || err.toString()
-        }. Using 'latest' version`
-      );
-      return buildPackage(pkgName);
-    });
 }

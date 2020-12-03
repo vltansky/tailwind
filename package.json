@@ -50,6 +50,7 @@
   "dependencies": {},
   "devDependencies": {
     "@angular/cli": "10.1.7",
+    "@nrwl/angular": "^10.4.4",
     "@nrwl/cli": "10.4.4",
     "@nrwl/eslint-plugin-nx": "10.4.4",
     "@nrwl/jest": "10.4.4",
