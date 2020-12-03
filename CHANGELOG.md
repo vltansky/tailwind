@@ -1,4 +1,11 @@
 CHANGELOG
+### [3.0.4](https://github.com/ngneat/tailwind/compare/v3.0.3...v3.0.4) (2020-12-03)
+
+
+### Bug Fixes
+
+* fix get default project for nx-setup ([6e1c64d](https://github.com/ngneat/tailwind/commit/6e1c64d3792d50c4fc7486ff73ea2dc675f64b3e))
+
 ### [3.0.3](https://github.com/ngneat/tailwind/compare/v3.0.2...v3.0.3) (2020-12-03)
 
 
