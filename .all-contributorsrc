@@ -46,6 +46,15 @@
         "ideas",
         "mentoring"
       ]
+    },
+    {
+      "login": "Bilal-io",
+      "name": "BK",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4480581?v=4",
+      "profile": "https://bilalkhoukhi.com/",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
