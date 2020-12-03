@@ -1,4 +1,23 @@
 CHANGELOG
+### [3.0.3](https://github.com/ngneat/tailwind/compare/v3.0.2...v3.0.3) (2020-12-03)
+
+
+### Bug Fixes
+
+* adjust ng-add schematics ([a9af67a](https://github.com/ngneat/tailwind/commit/a9af67a2b466d8cfe4b9687b8fe4e02e8349f70a))
+* misc adjustments ([447ecdb](https://github.com/ngneat/tailwind/commit/447ecdbbb4fe6e966b5d65c63e1e34bdcbd67ef5)), closes [#25](https://github.com/ngneat/tailwind/issues/25)
+
+
+### CI/CD
+
+* adjust test actions ([c3922c5](https://github.com/ngneat/tailwind/commit/c3922c5dd5bbf22adeefbc56ffb248ed30ac90d7))
+* use matrix node in test actions ([f64a447](https://github.com/ngneat/tailwind/commit/f64a447f64648071c4caf2cffb81a004d7f75e7f))
+
+
+### Documentations
+
+* update readme about installing ngneat/tailwind for nx ([8e9136d](https://github.com/ngneat/tailwind/commit/8e9136d06fa04cb377ae294137ee5d5343593b58))
+
 ### [3.0.2](https://github.com/ngneat/tailwind/compare/v3.0.1...v3.0.2) (2020-12-03)
 
 
