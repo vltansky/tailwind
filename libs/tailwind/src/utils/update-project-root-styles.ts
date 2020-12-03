@@ -1,11 +1,12 @@
 import type { workspaces } from '@angular-devkit/core';
 import type { Rule, Tree } from '@angular-devkit/schematics';
-import { InsertChange } from '@nrwl/workspace';
+import type { InsertChange } from '@nrwl/workspace';
 import { getTailwindImports } from './get-tailwind-imports';
 
 export function updateProjectRootStyles(
   projectName: string,
-  getWorkspace: (tree: Tree) => Promise<workspaces.WorkspaceDefinition>
+  getWorkspace: (tree: Tree) => Promise<workspaces.WorkspaceDefinition>,
+  insertChange: typeof InsertChange
 ): Rule {
   return (tree, context) => {
     return getWorkspace(tree).then((workspace) => {
@@ -24,7 +25,7 @@ export function updateProjectRootStyles(
         return tree;
       }
 
-      const insertion = new InsertChange(
+      const insertion = new insertChange(
         stylePath as string,
         0,
         getTailwindImports()

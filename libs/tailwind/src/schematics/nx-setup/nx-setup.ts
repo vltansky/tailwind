@@ -8,6 +8,7 @@ import {
   addDepsToPackageJson,
   getProjectGraphFromHost,
   getWorkspace,
+  InsertChange,
   ProjectGraph,
   ProjectGraphNode,
   projectRootDir,
@@ -53,7 +54,7 @@ export default function (options: TailwindSchematicsOptions): Rule {
       addDependenciesToPackageJson(style),
       addConfigFiles(style, appsDir, libsDir),
       updateWorkspaceTargets(projectName, updateWorkspace),
-      updateProjectRootStyles(projectName, getWorkspace),
+      updateProjectRootStyles(projectName, getWorkspace, InsertChange),
     ])(tree, context);
   };
 }
