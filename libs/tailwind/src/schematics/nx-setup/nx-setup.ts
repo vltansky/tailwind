@@ -120,6 +120,7 @@ function getDefaultProjectFromGraph(
   if (projectName) return graph.nodes[projectName];
   return Object.values(graph.nodes).find(
     (node) =>
+      node.type === 'app' &&
       node.data.projectType === ProjectType.Application &&
       Object.values(node.data.architect).some((target) =>
         target.builder.includes('angular')
