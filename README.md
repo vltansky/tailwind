@@ -71,13 +71,13 @@ _libs
 
 ### Commit Hooks
 
-- There are two hooks setup: `pre-commit` and `pre-push`
-  - pre-commit will execute `npm run lint` and `pretty-quick` to lint and reformat.pre-commit does not run Unit Tests
-    because Unit Tests will be ran in Github Actions. Feel free to run the Unit Tests with `npm run test` to test your
-    changes
-  - pre-push will execute `npm run e2e` which will run the E2E tests. E2E tests for schematics take a long time due to
-    schematics need to work on new Workspaces/Applications so generation takes times. That's why pre-push is setup to
-    run E2E tests instead of pre-commit
+pre-commit will execute `npm run lint` and `pretty-quick` to lint and reformat.pre-commit does not run Unit Tests
+because Unit Tests will be ran in Github Actions. Feel free to run the Unit Tests with `npm run test` to test your
+changes
+
+### E2E Tests
+
+Please run `npm run e2e` to run E2E tests before pushing
 
 ### Updating README
 

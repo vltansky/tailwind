@@ -1,6 +1,6 @@
 {
   "name": "@ngneat/tailwind",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "license": "MIT",
   "description": "A schematic that adds TailwindCSS to Angular applications",
   "author": "Chau Tran",
@@ -84,8 +84,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && pretty-quick --staged",
-      "pre-push": "npm run e2e"
+      "pre-commit": "lint-staged && pretty-quick --staged"
     }
   },
   "lint-staged": {
