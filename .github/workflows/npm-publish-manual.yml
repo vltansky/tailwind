@@ -4,18 +4,6 @@
 name: Publish Manual
 on: [ workflow_dispatch ]
 jobs:
-  build-test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: |
-          yarn install --frozen-lockfile
-          yarn build
-          yarn test
-
   publish-npm:
     needs: build-test
     runs-on: ubuntu-latest
@@ -25,11 +13,11 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Build
-        run: yarn build
-      - name: Publish
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+#      - name: Install dependencies
+#        run: yarn install --frozen-lockfile
+#      - name: Build
+#        run: yarn build
+#      - name: Publish
+#        run: yarn publish
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
