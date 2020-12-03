@@ -22,40 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc20ce5b-562c-46ed-aae8-62138c006c2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.all-contributorsrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.github/ISSUE_TEMPLATE/bug_report.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.github/ISSUE_TEMPLATE/feature_request.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/feature_request.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.github/workflows/npm-publish-manual.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/npm-publish-manual.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.github/workflows/npm-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/npm-publish.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/assets/tailwind-gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/tailwind-gif.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/changelog.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/collection.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/files/tailwind.config.js.template" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/files/webpack.config.js.template" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/index.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/schema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/setup-project.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/setup-project.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/src/ng-add/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/tailwind/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="fc20ce5b-562c-46ed-aae8-62138c006c2a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +129,7 @@
       <workItem from="1605583566405" duration="4660000" />
       <workItem from="1605628300290" duration="1537000" />
       <workItem from="1606862905075" duration="31298000" />
-      <workItem from="1606970391773" duration="1987000" />
+      <workItem from="1606970391773" duration="2367000" />
     </task>
     <servers />
   </component>
