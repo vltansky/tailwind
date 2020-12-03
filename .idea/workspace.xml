@@ -22,7 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc20ce5b-562c-46ed-aae8-62138c006c2a" name="Default Changelist" comment="" />
+    <list default="true" id="fc20ce5b-562c-46ed-aae8-62138c006c2a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/npm-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/npm-publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/src/schematics/ng-add/ng-add.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/ng-add/ng-add.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/src/schematics/nx-setup/nx-setup.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/nx-setup/nx-setup.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +136,7 @@
       <workItem from="1605583566405" duration="4660000" />
       <workItem from="1605628300290" duration="1537000" />
       <workItem from="1606862905075" duration="31298000" />
-      <workItem from="1606970391773" duration="2367000" />
+      <workItem from="1606970391773" duration="2745000" />
     </task>
     <servers />
   </component>

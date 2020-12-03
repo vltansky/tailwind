@@ -19,7 +19,7 @@
     "postinstall": "node ./decorate-angular-cli.js",
     "nx": "nx",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng run tailwind:build-copy",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
@@ -40,7 +40,9 @@
     "help": "nx help",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors init",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "publish": "cd dist/libs/tailwind && npm publish",
+    "release": "standard-version"
   },
   "publishConfig": {
     "access": "public"
