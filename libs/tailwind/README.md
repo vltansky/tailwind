@@ -38,6 +38,59 @@ default, `@ngneat/tailwind` sets the `content` to any **HTML** and any **TS** fi
 
 This behavior can be modified as the consumers see fit.
 
+## Contributing
+
+- Fork this repo and clone the fork on your machine.
+- Run `npm install` to install all the dependencies
+- Start working on changes
+
+### Structure
+
+```
+_apps
+ |__tailwind-e2e (e2e tests)
+_libs
+ |__tailwind
+    |__src
+       |__schematics
+          |__ng-add (AngularCLI schematics)
+          |__nx-setup (NxCLI schematics)
+          |__files (files template to be generated)
+          |__specs (unit tests)
+          |__schema.d.ts (interface)
+       |__constants (constants used in the project)
+       |__utils (utilities functions)
+       |__collection.json (schematics configuration)
+       |__package.json (package.json of @ngneat/tailwind which will be published to npm)
+```
+
+### Commit
+
+- Run `git add .` to stage your changes
+- Run `npm run commit` to start Conventional Commit flow
+
+### Commit Hooks
+
+- There are two hooks setup: `pre-commit` and `pre-push`
+  - pre-commit will execute `npm run lint` and `pretty-quick` to lint and reformat.pre-commit does not run Unit Tests
+    because Unit Tests will be ran in Github Actions. Feel free to run the Unit Tests with `npm run test` to test your
+    changes
+  - pre-push will execute `npm run e2e` which will run the E2E tests. E2E tests for schematics take a long time due to
+    schematics need to work on new Workspaces/Applications so generation takes times. That's why pre-push is setup to
+    run E2E tests instead of pre-commit
+
+### Updating README
+
+`README` is in two places at the moment: root and `libs/tailwind/README.md`. The one in root is the one displayed on
+Github while the one in `libs/tailwind` is being used on `npm`. When you make changes to `README`, make sure to update
+both.
+
+> A script can be created to automating this.
+
+### PR
+
+When everything passes and looks good, make a PR. Thanks for your contribution.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
