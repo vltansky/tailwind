@@ -14,7 +14,17 @@ ng add @ngneat/tailwind
 
 ## Usage with Nx
 
-In Nx, you can either use `AngularCLI` or `NxCLI`. If you setup your Nx Workspace to use `AngularCLI`, the usage is the same as above. If you setup your Nx Workspace with `NxCLI`, run the following command:
+In Nx, you can either use `AngularCLI` or `NxCLI`. If you setup your Nx Workspace to use `AngularCLI`, the usage is the
+same as above. If you setup your Nx Workspace with `NxCLI`, follow the steps:
+
+Install `@ngneat/tailwind` first:
+
+```
+npm i -D @ngneat/tailwind
+yarn add -D @ngneat/tailwind
+```
+
+then execute the schematics:
 
 ```
 nx generate @ngneat/tailwind:nx-setup

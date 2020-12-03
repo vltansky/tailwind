@@ -14,7 +14,17 @@ ng add @ngneat/tailwind
 
 ## Usage with Nx
 
-In Nx, you can either use `AngularCLI` or `NxCLI`. If you setup your Nx Workspace to use `AngularCLI`, the usage is the same as above. If you setup your Nx Workspace with `NxCLI`, run the following command:
+In Nx, you can either use `AngularCLI` or `NxCLI`. If you setup your Nx Workspace to use `AngularCLI`, the usage is the
+same as above. If you setup your Nx Workspace with `NxCLI`, follow the steps:
+
+Install `@ngneat/tailwind` first:
+
+```
+npm i -D @ngneat/tailwind
+yarn add -D @ngneat/tailwind
+```
+
+then execute the schematics:
 
 ```
 nx generate @ngneat/tailwind:nx-setup
@@ -22,7 +32,9 @@ nx generate @ngneat/tailwind:nx-setup
 
 ## Purge
 
-`@ngneat/tailwind` uses built-in `purge` functionality by `tailwindcss` (under the hood, it is [postcss-purgecss](https://github.com/FullHuman/purgecss/tree/master/packages/postcss-purgecss)). By default, `@ngneat/tailwind` sets the `content` to any **HTML** and any **TS** files in the project.
+`@ngneat/tailwind` uses built-in `purge` functionality by `tailwindcss` (under the hood, it
+is [postcss-purgecss](https://github.com/FullHuman/purgecss/tree/master/packages/postcss-purgecss)). By
+default, `@ngneat/tailwind` sets the `content` to any **HTML** and any **TS** files in the project.
 
 This behavior can be modified as the consumers see fit.
 
@@ -48,4 +60,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+Contributions of any kind welcome!
