@@ -1,5 +1,6 @@
 import type { workspaces } from '@angular-devkit/core';
 import type { Rule } from '@angular-devkit/schematics';
+import { isNx } from './is-nx';
 
 export function updateWorkspaceTargets(
   projectName: string,
@@ -21,7 +22,7 @@ export function updateWorkspaceTargets(
         path: 'webpack.config.js',
       };
 
-      if (!tree.exists('./nx.json')) {
+      if (!isNx(tree)) {
         const testTarget = project.targets.get('test');
         if (testTarget) {
           testTarget.builder = '@angular-builders/custom-webpack:karma';

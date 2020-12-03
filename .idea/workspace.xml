@@ -23,7 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc20ce5b-562c-46ed-aae8-62138c006c2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/npm-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/npm-publish.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/is-nx.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.all-contributorsrc" beforeDir="false" afterPath="$PROJECT_DIR$/.all-contributorsrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/tailwind-e2e/tests/tailwind.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/tailwind-e2e/tests/tailwind.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/src/builders/build/builder.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/builders/build/builder.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/src/schematics/ng-add/ng-add.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/ng-add/ng-add.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/src/schematics/nx-setup/nx-setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/schematics/nx-setup/nx-setup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/src/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tailwind/src/utils/update-workspace-targets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tailwind/src/utils/update-workspace-targets.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +142,8 @@
       <workItem from="1605583566405" duration="4660000" />
       <workItem from="1605628300290" duration="1537000" />
       <workItem from="1606862905075" duration="31298000" />
-      <workItem from="1606970391773" duration="3641000" />
+      <workItem from="1606970391773" duration="5676000" />
+      <workItem from="1607007764728" duration="134000" />
     </task>
     <servers />
   </component>

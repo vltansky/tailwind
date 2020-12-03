@@ -16,9 +16,9 @@ describe('tailwind e2e', () => {
   const pluginNpmName = '@ngneat/tailwind';
   const pluginDistPath = 'dist/libs/tailwind';
 
-  afterEach(() => {
-    cleanup();
-  });
+  // afterEach(() => {
+  //   cleanup();
+  // });
 
   it('should work with Angular + Nx CLI in Nx', async (done) => {
     ensureNxProject(pluginNpmName, pluginDistPath);

@@ -1,5 +1,8 @@
 import { chain, Rule } from '@angular-devkit/schematics';
-import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
+import {
+  NodePackageInstallTask,
+  RunSchematicTask,
+} from '@angular-devkit/schematics/tasks';
 import type {
   getWorkspace as getNxWorkspace,
   updateWorkspace as updateNxWorkspace,
@@ -17,6 +20,7 @@ import { DEPENDENCIES } from '../../constants';
 import {
   addConfigFiles,
   getLatestNodeVersion,
+  isNx,
   updateProjectRootStyles,
   updateWorkspaceTargets,
 } from '../../utils';
@@ -24,6 +28,12 @@ import type { TailwindSchematicsOptions } from '../schema';
 
 export default function (options: TailwindSchematicsOptions): Rule {
   return (tree, context) => {
+    if (isNx(tree)) {
+      // If ng-add is invoked inside of Nx Workspace, call the nx-setup schematics instead
+      context.addTask(new RunSchematicTask('nx-setup', options));
+      return tree;
+    }
+
     return chain([
       addPackageJsonDependencies(options),
       installDependencies(),

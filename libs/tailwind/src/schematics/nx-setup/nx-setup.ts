@@ -1,14 +1,8 @@
-import { normalize } from '@angular-devkit/core';
 import {
-  apply,
-  applyTemplates,
   chain,
-  mergeWith,
-  move,
   Rule,
   SchematicContext,
   Tree,
-  url,
 } from '@angular-devkit/schematics';
 import {
   addDepsToPackageJson,
@@ -25,8 +19,9 @@ import { DEPENDENCIES } from '../../constants';
 import {
   addConfigFiles,
   getLatestNodeVersion,
+  isNx,
   updateProjectRootStyles,
-  updateWorkspaceTargets
+  updateWorkspaceTargets,
 } from '../../utils';
 import type { TailwindSchematicsOptions } from '../schema';
 
@@ -41,7 +36,7 @@ interface NormalizedTailwindSchematicsOptions
 
 export default function (options: TailwindSchematicsOptions): Rule {
   return (tree, context) => {
-    if (!tree.exists('./nx.json')) {
+    if (!isNx(tree)) {
       context.logger.fatal(
         'Schematics is not invoked inside of a Nx workspace. Please try again in a Nx workspace.'
       );
