@@ -1,4 +1,35 @@
 CHANGELOG
+## [3.0.0](https://github.com/ngneat/tailwind/compare/v1.1.0...v3.0.0) (2020-12-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* - Add new schematics nx-setup for NxCLI powered workspaces
+
+### Documentations
+
+* add [@beeman](https://github.com/beeman) as a contributor ([9a013f5](https://github.com/ngneat/tailwind/commit/9a013f5fd8e430f2193f9598a49ab986367944de))
+* add [@nartc](https://github.com/nartc) as a contributor ([5dde874](https://github.com/ngneat/tailwind/commit/5dde87423abbf375e605a048fda6fa4b4be2e9b1))
+* add [@santoshyadavdev](https://github.com/santoshyadavdev) as a contributor ([b66d89c](https://github.com/ngneat/tailwind/commit/b66d89cf46ef9068136265aca990896598da61ea))
+* add @Bilal-io as a contributor ([0a43ad3](https://github.com/ngneat/tailwind/commit/0a43ad336e837f84eeb3db496e016cd539102567))
+* add @NetanelBasal as a contributor ([13ed3a4](https://github.com/ngneat/tailwind/commit/13ed3a46ccef24dcef0f1350ff391997bb070997))
+
+
+### Features/Enhancements
+
+* move to Nx ([9382261](https://github.com/ngneat/tailwind/commit/9382261cc1fa8ec91688128bf5f936d3f86212ab))
+
+
+### Chores
+
+* **release:** 2.0.0 ([087f28d](https://github.com/ngneat/tailwind/commit/087f28d940cca60735515bc833b1801cfc08ef4c))
+* clean up idea workspace ([37133e7](https://github.com/ngneat/tailwind/commit/37133e731424cd4bbecf4aa99d82bd10a34faba2))
+
+
+### CI/CD
+
+* adjust github actions ([e88d78d](https://github.com/ngneat/tailwind/commit/e88d78d89d9cd6064a7600f02ef487da4fa6e80e))
+* update test actions ([a4c89dc](https://github.com/ngneat/tailwind/commit/a4c89dcda6a3672b29063902a059ab267d0beae8))
 
 ## [2.0.0](https://github.com/ngneat/tailwind/compare/v1.1.0...v2.0.0) (2020-12-03)
 
