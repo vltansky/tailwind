@@ -1,4 +1,11 @@
 CHANGELOG
+### [3.0.2](https://github.com/ngneat/tailwind/compare/v3.0.1...v3.0.2) (2020-12-03)
+
+
+### CI/CD
+
+* update publish actions ([874d728](https://github.com/ngneat/tailwind/commit/874d728a37ebc1216fda660edff3df698d73ddab))
+
 ### [3.0.1](https://github.com/ngneat/tailwind/compare/v3.0.0...v3.0.1) (2020-12-03)
 
 
