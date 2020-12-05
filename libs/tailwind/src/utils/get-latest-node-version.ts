@@ -15,7 +15,7 @@ export interface NodePackage {
  */
 export function getLatestNodeVersion(
   packageName: string,
-  useCustomWebpackBeta: boolean = false
+  useCustomWebpackBeta = false
 ): Promise<NodePackage> {
   const DEFAULT_VERSION = 'latest';
 
