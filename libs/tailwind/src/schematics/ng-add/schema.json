@@ -39,6 +39,12 @@
           }
         ]
       }
+    },
+    "useCustomWebpackBeta": {
+      "description": "Whether to use beta version of @angular-builders/custom-webpack?",
+      "type": "boolean",
+      "default": false,
+      "x-prompt": "Would you like to setup with @angular-builders/custom-webpack@beta?"
     }
   }
 }

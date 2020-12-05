@@ -54,16 +54,18 @@ function addPackageJsonDependencies(options: TailwindSchematicsOptions): Rule {
   return (tree, context) => {
     return Promise.all(
       deps.map((dep) =>
-        getLatestNodeVersion(dep).then(({ name, version }) => {
-          context.logger.info(`✅️ Added ${name}@${version}`);
-          const nodeDependency: NodeDependency = {
-            name,
-            version,
-            type: NodeDependencyType.Dev,
-            overwrite: false,
-          };
-          addPackageJsonDependency(tree, nodeDependency);
-        })
+        getLatestNodeVersion(dep, options.useCustomWebpackBeta).then(
+          ({ name, version }) => {
+            context.logger.info(`✅️ Added ${name}@${version}`);
+            const nodeDependency: NodeDependency = {
+              name,
+              version,
+              type: NodeDependencyType.Dev,
+              overwrite: false,
+            };
+            addPackageJsonDependency(tree, nodeDependency);
+          }
+        )
       )
     ).then(() => tree) as ReturnType<Rule>;
   };
