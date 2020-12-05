@@ -1,40 +1,66 @@
 CHANGELOG
 
+### [3.0.6](https://github.com/ngneat/tailwind/compare/v3.0.4...v3.0.6) (2020-12-05)
+
+### Bug Fixes
+
+* add opt-in custom-webpack
+  beta ([0a69c09](https://github.com/ngneat/tailwind/commit/0a69c0981f881e6c88b14e16a66d9154062e45b9))
+  - `@angular-builders/custom-webpack@beta` supports for Angular 11. Using beta is considered a risk but if you want to
+    experiment with Angular 11 (new build output etc...), you'd want to opt-in to
+    use `@angular-builders/custom-webpack@beta`
+
+### Chores
+
+* update packages ([7aaab37](https://github.com/ngneat/tailwind/commit/7aaab377f65b4233d1f610e011bcc960905d5e68))
+
+### Refactors
+
+* remove type annotation ([6846e10](https://github.com/ngneat/tailwind/commit/6846e1090edfa2406697d3f5158ae2c2cb222fde))
+
 ### [3.0.5](https://github.com/ngneat/tailwind/compare/v3.0.4...v3.0.5) (2020-12-03)
 
 ### Bug Fixes
 
-- fix update project root styles with InsertChange ([ef8c383](https://github.com/ngneat/tailwind/commit/ef8c383e6448295fce9e7725d6e450d767e1b87f))
+- fix update project root styles with
+  InsertChange ([ef8c383](https://github.com/ngneat/tailwind/commit/ef8c383e6448295fce9e7725d6e450d767e1b87f))
 
 ### Chores
 
-- setup husky, lint-staged, and pretty-quick ([d930f13](https://github.com/ngneat/tailwind/commit/d930f1390c0f0c7ed9da962b1aec9c3b00ba570f))
+- setup husky, lint-staged, and
+  pretty-quick ([d930f13](https://github.com/ngneat/tailwind/commit/d930f1390c0f0c7ed9da962b1aec9c3b00ba570f))
 
 ### Documentations
 
-- update docs about contributing ([4400d8d](https://github.com/ngneat/tailwind/commit/4400d8dd1e7e0a5a9a1f8383f2ef20f4c660706b))
+- update docs about
+  contributing ([4400d8d](https://github.com/ngneat/tailwind/commit/4400d8dd1e7e0a5a9a1f8383f2ef20f4c660706b))
 
 ### [3.0.4](https://github.com/ngneat/tailwind/compare/v3.0.3...v3.0.4) (2020-12-03)
 
 ### Bug Fixes
 
-- fix get default project for nx-setup ([6e1c64d](https://github.com/ngneat/tailwind/commit/6e1c64d3792d50c4fc7486ff73ea2dc675f64b3e))
+- fix get default project for
+  nx-setup ([6e1c64d](https://github.com/ngneat/tailwind/commit/6e1c64d3792d50c4fc7486ff73ea2dc675f64b3e))
 
 ### [3.0.3](https://github.com/ngneat/tailwind/compare/v3.0.2...v3.0.3) (2020-12-03)
 
 ### Bug Fixes
 
-- adjust ng-add schematics ([a9af67a](https://github.com/ngneat/tailwind/commit/a9af67a2b466d8cfe4b9687b8fe4e02e8349f70a))
-- misc adjustments ([447ecdb](https://github.com/ngneat/tailwind/commit/447ecdbbb4fe6e966b5d65c63e1e34bdcbd67ef5)), closes [#25](https://github.com/ngneat/tailwind/issues/25)
+- adjust ng-add
+  schematics ([a9af67a](https://github.com/ngneat/tailwind/commit/a9af67a2b466d8cfe4b9687b8fe4e02e8349f70a))
+- misc adjustments ([447ecdb](https://github.com/ngneat/tailwind/commit/447ecdbbb4fe6e966b5d65c63e1e34bdcbd67ef5)),
+  closes [#25](https://github.com/ngneat/tailwind/issues/25)
 
 ### CI/CD
 
 - adjust test actions ([c3922c5](https://github.com/ngneat/tailwind/commit/c3922c5dd5bbf22adeefbc56ffb248ed30ac90d7))
-- use matrix node in test actions ([f64a447](https://github.com/ngneat/tailwind/commit/f64a447f64648071c4caf2cffb81a004d7f75e7f))
+- use matrix node in test
+  actions ([f64a447](https://github.com/ngneat/tailwind/commit/f64a447f64648071c4caf2cffb81a004d7f75e7f))
 
 ### Documentations
 
-- update readme about installing ngneat/tailwind for nx ([8e9136d](https://github.com/ngneat/tailwind/commit/8e9136d06fa04cb377ae294137ee5d5343593b58))
+- update readme about installing ngneat/tailwind for
+  nx ([8e9136d](https://github.com/ngneat/tailwind/commit/8e9136d06fa04cb377ae294137ee5d5343593b58))
 
 ### [3.0.2](https://github.com/ngneat/tailwind/compare/v3.0.1...v3.0.2) (2020-12-03)
 
@@ -52,15 +78,21 @@ CHANGELOG
 
 ### ⚠ BREAKING CHANGES
 
-- - Add new schematics nx-setup for NxCLI powered workspaces
+-
+  - Add new schematics nx-setup for NxCLI powered workspaces
 
 ### Documentations
 
-- add [@beeman](https://github.com/beeman) as a contributor ([9a013f5](https://github.com/ngneat/tailwind/commit/9a013f5fd8e430f2193f9598a49ab986367944de))
-- add [@nartc](https://github.com/nartc) as a contributor ([5dde874](https://github.com/ngneat/tailwind/commit/5dde87423abbf375e605a048fda6fa4b4be2e9b1))
-- add [@santoshyadavdev](https://github.com/santoshyadavdev) as a contributor ([b66d89c](https://github.com/ngneat/tailwind/commit/b66d89cf46ef9068136265aca990896598da61ea))
-- add @Bilal-io as a contributor ([0a43ad3](https://github.com/ngneat/tailwind/commit/0a43ad336e837f84eeb3db496e016cd539102567))
-- add @NetanelBasal as a contributor ([13ed3a4](https://github.com/ngneat/tailwind/commit/13ed3a46ccef24dcef0f1350ff391997bb070997))
+- add [@beeman](https://github.com/beeman) as a
+  contributor ([9a013f5](https://github.com/ngneat/tailwind/commit/9a013f5fd8e430f2193f9598a49ab986367944de))
+- add [@nartc](https://github.com/nartc) as a
+  contributor ([5dde874](https://github.com/ngneat/tailwind/commit/5dde87423abbf375e605a048fda6fa4b4be2e9b1))
+- add [@santoshyadavdev](https://github.com/santoshyadavdev) as a
+  contributor ([b66d89c](https://github.com/ngneat/tailwind/commit/b66d89cf46ef9068136265aca990896598da61ea))
+- add @Bilal-io as a
+  contributor ([0a43ad3](https://github.com/ngneat/tailwind/commit/0a43ad336e837f84eeb3db496e016cd539102567))
+- add @NetanelBasal as a
+  contributor ([13ed3a4](https://github.com/ngneat/tailwind/commit/13ed3a46ccef24dcef0f1350ff391997bb070997))
 
 ### Features/Enhancements
 
@@ -69,7 +101,8 @@ CHANGELOG
 ### Chores
 
 - **release:** 2.0.0 ([087f28d](https://github.com/ngneat/tailwind/commit/087f28d940cca60735515bc833b1801cfc08ef4c))
-- clean up idea workspace ([37133e7](https://github.com/ngneat/tailwind/commit/37133e731424cd4bbecf4aa99d82bd10a34faba2))
+- clean up idea
+  workspace ([37133e7](https://github.com/ngneat/tailwind/commit/37133e731424cd4bbecf4aa99d82bd10a34faba2))
 
 ### CI/CD
 
@@ -80,7 +113,8 @@ CHANGELOG
 
 ### ⚠ BREAKING CHANGES
 
-- - Add new schematics nx-setup for NxCLI powered workspaces
+-
+  - Add new schematics nx-setup for NxCLI powered workspaces
 
 ### Documentations
 
