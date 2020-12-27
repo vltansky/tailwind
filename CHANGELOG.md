@@ -1,4 +1,35 @@
 CHANGELOG
+### [3.0.7](https://github.com/ngneat/tailwind/compare/v3.0.4...v3.0.7) (2020-12-27)
+
+
+### Bug Fixes
+
+* add opt-in custom-webpack beta ([0a69c09](https://github.com/ngneat/tailwind/commit/0a69c0981f881e6c88b14e16a66d9154062e45b9))
+* fix update project root styles with InsertChange ([ef8c383](https://github.com/ngneat/tailwind/commit/ef8c383e6448295fce9e7725d6e450d767e1b87f))
+* remove useCustomWebpack option since custom-webpack@11 is released ([97e8900](https://github.com/ngneat/tailwind/commit/97e89009cac47e33b301b5539c3c7f05f8453353))
+
+
+### Refactors
+
+* remove type annotation ([6846e10](https://github.com/ngneat/tailwind/commit/6846e1090edfa2406697d3f5158ae2c2cb222fde))
+
+
+### Chores
+
+* **release:** 3.0.6 ([6eddb95](https://github.com/ngneat/tailwind/commit/6eddb9590c1aad0793cd3ae3e807b2ac966020ed))
+* update packages ([7aaab37](https://github.com/ngneat/tailwind/commit/7aaab377f65b4233d1f610e011bcc960905d5e68))
+* **release:** 3.0.5 ([6d7964a](https://github.com/ngneat/tailwind/commit/6d7964a770253cd8c1916bfd683dfa7001c3ef71))
+* setup husky, lint-staged, and pretty-quick ([d930f13](https://github.com/ngneat/tailwind/commit/d930f1390c0f0c7ed9da962b1aec9c3b00ba570f))
+
+
+### Documentations
+
+* add CODE OF CONDUCT ([32ccae2](https://github.com/ngneat/tailwind/commit/32ccae224e70adde38a97b5a7761bad2662678dc))
+* add CONTRIBUTING ([8d3b3f6](https://github.com/ngneat/tailwind/commit/8d3b3f626782fc944edb3ebb92c4a6e7335b177d))
+* add LICENSE ([d75da3b](https://github.com/ngneat/tailwind/commit/d75da3b81aaed5a86c8438d2cce6e76c2078cac6))
+* update BK contributions type ([4eeaf34](https://github.com/ngneat/tailwind/commit/4eeaf34d3c8adcafc683104f0850cad747f79d85))
+* update contributions type for BK ([986af61](https://github.com/ngneat/tailwind/commit/986af61ea58c8dda982d030476ad003bbcee3703))
+* update docs about contributing ([4400d8d](https://github.com/ngneat/tailwind/commit/4400d8dd1e7e0a5a9a1f8383f2ef20f4c660706b))
 
 ### [3.0.6](https://github.com/ngneat/tailwind/compare/v3.0.4...v3.0.6) (2020-12-05)
 
