@@ -44,16 +44,14 @@ export default function (options: TailwindSchematicsOptions): Rule {
       return;
     }
 
-    const {
-      projectName,
-      style,
-      useCustomWebpackBeta,
-      appsDir,
-      libsDir,
-    } = normalizeOptions(options, tree, context);
+    const { projectName, style, appsDir, libsDir } = normalizeOptions(
+      options,
+      tree,
+      context
+    );
 
     return chain([
-      addDependenciesToPackageJson(style, useCustomWebpackBeta),
+      addDependenciesToPackageJson(style),
       addConfigFiles(style, appsDir, libsDir),
       updateWorkspaceTargets(projectName, updateWorkspace),
       updateProjectRootStyles(projectName, getWorkspace, InsertChange),
@@ -61,10 +59,7 @@ export default function (options: TailwindSchematicsOptions): Rule {
   };
 }
 
-function addDependenciesToPackageJson(
-  style: string,
-  useCustomWebpackBeta: boolean
-): Rule {
+function addDependenciesToPackageJson(style: string): Rule {
   const deps = [...DEPENDENCIES];
 
   if (style !== 'css') {
@@ -75,12 +70,10 @@ function addDependenciesToPackageJson(
     const devDeps = (
       await Promise.all(
         deps.map((dep) =>
-          getLatestNodeVersion(dep, useCustomWebpackBeta).then(
-            ({ name, version }) => {
-              ctx.logger.info(`✅️ Added ${name}@${version}`);
-              return { name, version };
-            }
-          )
+          getLatestNodeVersion(dep).then(({ name, version }) => {
+            ctx.logger.info(`✅️ Added ${name}@${version}`);
+            return { name, version };
+          })
         )
       )
     ).reduce((result, { name, version }) => {

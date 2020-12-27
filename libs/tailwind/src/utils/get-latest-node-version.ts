@@ -11,11 +11,9 @@ export interface NodePackage {
  *
  * @return {Promise<NodePackage>}
  * @param packageName
- * @param useCustomWebpackBeta
  */
 export function getLatestNodeVersion(
-  packageName: string,
-  useCustomWebpackBeta = false
+  packageName: string
 ): Promise<NodePackage> {
   const DEFAULT_VERSION = 'latest';
 
@@ -27,18 +25,7 @@ export function getLatestNodeVersion(
         try {
           const response = JSON.parse(rawData);
           const version = (response && response['dist-tags']) || {};
-          if (packageName.includes('custom-webpack')) {
-            resolve(
-              buildPackage(
-                packageName,
-                useCustomWebpackBeta
-                  ? version.beta || version.next || version.latest
-                  : version.latest
-              )
-            );
-          } else {
-            resolve(buildPackage(packageName, version.latest));
-          }
+          resolve(buildPackage(packageName, version.latest));
         } catch (e) {
           resolve(buildPackage(packageName));
         }

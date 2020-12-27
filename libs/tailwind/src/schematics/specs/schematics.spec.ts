@@ -104,21 +104,6 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
       done();
     });
 
-    it('should use custom-webpack@beta to devDependencies', async (done) => {
-      const tree = await schematicRunner
-        .runSchematicAsync(
-          schematic,
-          { style: 'scss', project: 'foo', useCustomWebpackBeta: true },
-          appTree
-        )
-        .toPromise();
-      const packageJson = tree.readContent('./package.json');
-      expect(packageJson).toBeTruthy();
-      assertDefaultPackages(packageJson);
-      expect(packageJson).toMatch(/@angular-builders\/custom-webpack.+(beta)/);
-      done();
-    });
-
     it('should update angular.json to use custom-webpack', async (done) => {
       const tree = await schematicRunner
         .runSchematicAsync(
