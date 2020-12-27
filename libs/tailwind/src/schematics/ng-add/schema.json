@@ -11,34 +11,6 @@
         "$source": "projectName"
       },
       "x-prompt": "What project would you like to use? (skip to use default project)"
-    },
-    "style": {
-      "description": "The file extension or preprocessor to use for style files.",
-      "type": "string",
-      "default": "css",
-      "enum": [
-        "css",
-        "scss",
-        "sass"
-      ],
-      "x-prompt": {
-        "message": "Which stylesheet flavor would you like to use? (CSS, SCSS, SASS)",
-        "type": "list",
-        "items": [
-          {
-            "value": "css",
-            "label": "CSS"
-          },
-          {
-            "value": "scss",
-            "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]"
-          },
-          {
-            "value": "sass",
-            "label": "Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]"
-          }
-        ]
-      }
     }
   }
 }

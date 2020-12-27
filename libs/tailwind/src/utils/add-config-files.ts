@@ -10,14 +10,12 @@ import {
 import { isInJest } from './is-in-jest';
 
 export function addConfigFiles(
-  style: string,
   appsDir?: string,
   libsDir?: string
 ): Rule {
   return mergeWith(
     apply(url(isInJest() ? '../files' : './files'), [
       applyTemplates({
-        style,
         appsDir,
         libsDir,
       }),

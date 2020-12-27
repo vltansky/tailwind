@@ -44,32 +44,26 @@ export default function (options: TailwindSchematicsOptions): Rule {
       return;
     }
 
-    const { projectName, style, appsDir, libsDir } = normalizeOptions(
+    const { projectName, appsDir, libsDir } = normalizeOptions(
       options,
       tree,
       context
     );
 
     return chain([
-      addDependenciesToPackageJson(style),
-      addConfigFiles(style, appsDir, libsDir),
+      addDependenciesToPackageJson(),
+      addConfigFiles(appsDir, libsDir),
       updateWorkspaceTargets(projectName, updateWorkspace),
       updateProjectRootStyles(projectName, getWorkspace, InsertChange),
     ])(tree, context);
   };
 }
 
-function addDependenciesToPackageJson(style: string): Rule {
-  const deps = [...DEPENDENCIES];
-
-  if (style !== 'css') {
-    deps.push(`postcss-${style}`);
-  }
-
+function addDependenciesToPackageJson(): Rule {
   return async (tree: Tree, ctx: SchematicContext) => {
     const devDeps = (
       await Promise.all(
-        deps.map((dep) =>
+        [...DEPENDENCIES].map((dep) =>
           getLatestNodeVersion(dep).then(({ name, version }) => {
             ctx.logger.info(`✅️ Added ${name}@${version}`);
             return { name, version };
