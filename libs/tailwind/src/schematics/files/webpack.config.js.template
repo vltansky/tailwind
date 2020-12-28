@@ -36,9 +36,7 @@ function patchWebpackPostcssPlugins({
         _postcssOptions.plugins.splice(insertIndex + position, 0, ...addPlugins);
         return _postcssOptions;
       };
-      return useLoader;
     }
-    return rule;
   }
 }
 
