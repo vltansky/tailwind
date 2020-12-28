@@ -54,7 +54,7 @@ export default function (options: TailwindSchematicsOptions): Rule {
       addDependenciesToPackageJson(),
       addConfigFiles(enableTailwindInComponentsStyles, appsDir, libsDir),
       updateWorkspaceTargets(projectName, updateWorkspace),
-      updateProjectRootStyles(projectName, getWorkspace, InsertChange),
+      updateProjectRootStyles(projectName, getWorkspace, updateWorkspace),
     ])(tree, context);
   };
 }
