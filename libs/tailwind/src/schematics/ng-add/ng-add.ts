@@ -37,23 +37,17 @@ export default function (options: TailwindSchematicsOptions): Rule {
     }
 
     return chain([
-      addPackageJsonDependencies(options),
+      addPackageJsonDependencies(),
       installDependencies(),
       setupProject(options),
     ])(tree, context);
   };
 }
 
-function addPackageJsonDependencies(options: TailwindSchematicsOptions): Rule {
-  const deps = [...DEPENDENCIES];
-
-  if (options.style !== 'css') {
-    deps.push(`postcss-${options.style}`);
-  }
-
+function addPackageJsonDependencies(): Rule {
   return (tree, context) => {
     return Promise.all(
-      deps.map((dep) =>
+      [...DEPENDENCIES].map((dep) =>
         getLatestNodeVersion(dep).then(({ name, version }) => {
           context.logger.info(`✅️ Added ${name}@${version}`);
           const nodeDependency: NodeDependency = {
@@ -79,7 +73,7 @@ function installDependencies(): Rule {
 
 function setupProject(options: TailwindSchematicsOptions): Rule {
   return chain([
-    addConfigFiles(options.style),
+    addConfigFiles(options.enableTailwindInComponentsStyles),
     updateWorkspaceTargets(
       options.project,
       (updateWorkspace as unknown) as typeof updateNxWorkspace
