@@ -73,7 +73,7 @@ function installDependencies(): Rule {
 
 function setupProject(options: TailwindSchematicsOptions): Rule {
   return chain([
-    addConfigFiles(),
+    addConfigFiles(options.enableTailwindInComponentsStyles),
     updateWorkspaceTargets(
       options.project,
       (updateWorkspace as unknown) as typeof updateNxWorkspace

@@ -44,7 +44,7 @@ export default function (options: TailwindSchematicsOptions): Rule {
       return;
     }
 
-    const { projectName, appsDir, libsDir } = normalizeOptions(
+    const { enableTailwindInComponentsStyles, projectName, appsDir, libsDir } = normalizeOptions(
       options,
       tree,
       context
@@ -52,7 +52,7 @@ export default function (options: TailwindSchematicsOptions): Rule {
 
     return chain([
       addDependenciesToPackageJson(),
-      addConfigFiles(appsDir, libsDir),
+      addConfigFiles(enableTailwindInComponentsStyles, appsDir, libsDir),
       updateWorkspaceTargets(projectName, updateWorkspace),
       updateProjectRootStyles(projectName, getWorkspace, InsertChange),
     ])(tree, context);
