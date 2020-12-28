@@ -4,7 +4,7 @@ This schematic will add [Tailwind CSS](https://tailwindcss.com/) to your [Angula
 
 ![Angular Tailwind CSS Schematics][demo]
 
-[demo]: ../../assets/tailwind-gif.gif
+[demo]: https://github.com/ngneat/tailwind/raw/master/assets/ngneat-tailwind.gif
 
 ## Usage
 
