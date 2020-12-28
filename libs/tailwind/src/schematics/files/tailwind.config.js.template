@@ -3,12 +3,9 @@ module.exports = (isProd) => ({
     purge: {
       enabled: isProd,
       content: [<% if (appsDir) {%>
-        './<%= appsDir %>/**/*.html',
-        './<%= appsDir %>/**/*.ts',<% } else {%>
-        '**/*.html',
-        '**/*.ts',<% } %><% if (libsDir) {%>
-        './<%= libsDir %>/**/*.html',
-        './<%= libsDir %>/**/*.ts',<% } %>
+        './<%= appsDir %>/**/*.{html,ts}',<% } else {%>
+        '**/*.{html,ts}',<% } %><% if (libsDir) {%>
+        './<%= libsDir %>/**/*.{html,ts}',<% } %>
       ]
     },
     darkMode: false, // or 'media' or 'class'
