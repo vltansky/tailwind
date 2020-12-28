@@ -105,6 +105,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.santoshyadav.dev/"><img src="https://avatars3.githubusercontent.com/u/11923975?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Santosh Yadav</b></sub></a><br /><a href="#ideas-santoshyadavdev" title="Ideas, Planning, & Feedback">🤔</a> <a href="#mentoring-santoshyadavdev" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://bilalkhoukhi.com/"><img src="https://avatars1.githubusercontent.com/u/4480581?v=4?s=75" width="75px;" alt=""/><br /><sub><b>BK</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=Bilal-io" title="Code">💻</a> <a href="#ideas-Bilal-io" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/beeman"><img src="https://avatars3.githubusercontent.com/u/36491?v=4?s=75" width="75px;" alt=""/><br /><sub><b>beeman</b></sub></a><br /><a href="#ideas-beeman" title="Ideas, Planning, & Feedback">🤔</a> <a href="#mentoring-beeman" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://github.com/vltansky"><img src="https://avatars0.githubusercontent.com/u/5851280?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Vlad Tansky</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=vltansky" title="Code">💻</a></td>
   </tr>
 </table>
 
