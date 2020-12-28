@@ -1,4 +1,8 @@
 function patchPostCSS(webpackConfig, tailwindConfig, components = false) {
+  if(!tailwindConfig){
+    console.error('Missing tailwind config :', tailwindConfig);
+    return;
+  }
   const pluginName = "autoprefixer";
   for (const rule of webpackConfig.module.rules) {
     if (!(rule.use && rule.use.length > 0) || (!components && rule.exclude)) {
