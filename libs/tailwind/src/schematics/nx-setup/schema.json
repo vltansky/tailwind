@@ -14,10 +14,10 @@
       "x-prompt": "What project would you like to use? (skip to use default project)"
     },
     "enableTailwindInComponentsStyles": {
-      "description": "Whether to use tailwind directives & functions in component styles?",
+      "description": "Whether to use tailwind directives & functions in component styles? (might increase build time)",
       "type": "boolean",
       "default": false,
-      "x-prompt": "Would you like to use tailwind directives & functions in component styles?"
+      "x-prompt": "Would you like to use tailwind directives & functions in component styles? (might increase build time)"
     }
   }
 }
