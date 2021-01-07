@@ -1,0 +1,60 @@
+{
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md",
+      "types": [
+        {
+          "type": "feat",
+          "section": "Features/Enhancements"
+        },
+        {
+          "type": "fix",
+          "section": "Bug Fixes"
+        },
+        {
+          "type": "chore",
+          "section": "Chores"
+        },
+        {
+          "type": "docs",
+          "section": "Documentations"
+        },
+        {
+          "type": "style",
+          "section": "Formatting"
+        },
+        {
+          "type": "refactor",
+          "section": "Refactors"
+        },
+        {
+          "type": "perf",
+          "section": "Performances"
+        },
+        {
+          "type": "test",
+          "section": "Tests"
+        },
+        {
+          "type": "build",
+          "section": "Build"
+        },
+        {
+          "type": "ci",
+          "section": "CI/CD"
+        }
+      ]
+    },
+    "@release-it/bumper": {
+      "out": [
+        "package.json",
+        "package-lock.json",
+        "libs/**/package*.json"
+      ]
+    }
+  },
+  "npm": {
+    "publish": false
+  }
+}
