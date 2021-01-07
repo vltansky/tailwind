@@ -26,7 +26,7 @@
           "builder": "@nrwl/node:package",
           "options": {
             "outputPath": "dist/libs/tailwind",
-            "tsConfig": "libs/tailwind/tsconfig.lib.json",
+            "tsconfig": "libs/tailwind/tsconfig.lib.json",
             "packageJson": "libs/tailwind/package.json",
             "main": "libs/tailwind/src/index.ts",
             "assets": [
