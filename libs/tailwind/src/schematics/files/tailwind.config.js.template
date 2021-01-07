@@ -4,7 +4,7 @@ module.exports = (isProd) => ({
       enabled: isProd,
       content: [<% if (appsDir) {%>
         './<%= appsDir %>/**/*.{html,ts}',<% } else {%>
-        '**/*.{html,ts}',<% } %><% if (libsDir) {%>
+        './<%= sourceRoot %>/**/*.{html,ts}',<% } %><% if (libsDir) {%>
         './<%= libsDir %>/**/*.{html,ts}',<% } %>
       ]
     },

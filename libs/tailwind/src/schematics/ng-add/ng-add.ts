@@ -9,6 +9,7 @@ import type {
   updateWorkspace as updateNxWorkspace,
 } from '@nrwl/workspace';
 import { InsertChange } from '@schematics/angular/utility/change';
+import { getWorkspace as getWorkspaceConfig } from '@schematics/angular/utility/config';
 import {
   addPackageJsonDependency,
   NodeDependency,
@@ -18,6 +19,7 @@ import {
   getWorkspace,
   updateWorkspace,
 } from '@schematics/angular/utility/workspace';
+
 import { DEPENDENCIES } from '../../constants';
 import {
   addConfigFiles,
@@ -36,10 +38,13 @@ export default function (options: TailwindSchematicsOptions): Rule {
       return tree;
     }
 
+    const workspace = getWorkspaceConfig(tree);
+    const projectSourceRoot = workspace.projects[options.project]?.sourceRoot;
+
     return chain([
       addPackageJsonDependencies(),
       installDependencies(),
-      setupProject(options),
+      setupProject(options, projectSourceRoot),
     ])(tree, context);
   };
 }
@@ -71,9 +76,17 @@ function installDependencies(): Rule {
   };
 }
 
-function setupProject(options: TailwindSchematicsOptions): Rule {
+function setupProject(
+  options: TailwindSchematicsOptions,
+  projectSourceRoot?: string
+): Rule {
   return chain([
-    addConfigFiles(options.enableTailwindInComponentsStyles),
+    addConfigFiles(
+      options.enableTailwindInComponentsStyles,
+      undefined,
+      undefined,
+      projectSourceRoot
+    ),
     updateWorkspaceTargets(
       options.project,
       (updateWorkspace as unknown) as typeof updateNxWorkspace

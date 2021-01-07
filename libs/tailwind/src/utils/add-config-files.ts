@@ -12,7 +12,8 @@ import { isInJest } from './is-in-jest';
 export function addConfigFiles(
   enableTailwindInComponentsStyles: boolean,
   appsDir?: string,
-  libsDir?: string
+  libsDir?: string,
+  sourceRoot = 'src'
 ): Rule {
   return mergeWith(
     apply(url(isInJest() ? '../files' : './files'), [
@@ -20,6 +21,7 @@ export function addConfigFiles(
         enableTailwindInComponentsStyles,
         appsDir,
         libsDir,
+        sourceRoot,
       }),
       move(normalize('./')),
     ])
