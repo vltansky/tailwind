@@ -80,7 +80,6 @@
     "pretty-quick": "3.1.0",
     "release-it": "14.2.2",
     "rimraf": "3.0.2",
-    "standard-version": "9.0.0",
     "ts-jest": "26.4.4",
     "ts-node": "9.1.0",
     "tslint": "6.0.0",
@@ -143,55 +142,5 @@
         }
       }
     }
-  },
-  "standard-version": {
-    "bumpFiles": [
-      "package.json",
-      "package-lock.json",
-      "libs/tailwind/package.json"
-    ],
-    "header": "CHANGELOG",
-    "types": [
-      {
-        "type": "feat",
-        "section": "Features/Enhancements"
-      },
-      {
-        "type": "fix",
-        "section": "Bug Fixes"
-      },
-      {
-        "type": "chore",
-        "section": "Chores"
-      },
-      {
-        "type": "docs",
-        "section": "Documentations"
-      },
-      {
-        "type": "style",
-        "section": "Formatting"
-      },
-      {
-        "type": "refactor",
-        "section": "Refactors"
-      },
-      {
-        "type": "perf",
-        "section": "Performances"
-      },
-      {
-        "type": "test",
-        "section": "Tests"
-      },
-      {
-        "type": "build",
-        "section": "Build"
-      },
-      {
-        "type": "ci",
-        "section": "CI/CD"
-      }
-    ]
   }
 }
