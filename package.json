@@ -61,6 +61,7 @@
     "@types/fs-extra": "9.0.4",
     "@types/jest": "26.0.16",
     "@types/node": "14.14.10",
+    "@types/webpack": "4.41.25",
     "@typescript-eslint/eslint-plugin": "4.9.0",
     "@typescript-eslint/parser": "4.9.0",
     "all-contributors-cli": "6.19.0",

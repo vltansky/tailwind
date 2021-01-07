@@ -10,9 +10,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/tailwind/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/tailwind/**/*.ts"]
           }
         },
         "test": {
