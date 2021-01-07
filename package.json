@@ -28,11 +28,11 @@
     "affected:build": "nx affected:build",
     "affected:e2e": "nx affected:e2e",
     "affected:test": "nx affected:test",
-    "affected:lint": "nx affected:lint",
+    "affected:lint": "nx workspace-lint && nx affected:lint --base=main",
     "affected:dep-graph": "nx affected:dep-graph",
     "affected": "nx affected",
     "format": "nx format:write",
-    "format:write": "nx format:write",
+    "format:write": "nx format:write --base=main",
     "format:check": "nx format:check",
     "update": "ng update @nrwl/workspace",
     "workspace-schematic": "nx workspace-schematic",
@@ -70,6 +70,7 @@
     "eslint": "7.15.0",
     "eslint-config-prettier": "6.15.0",
     "fs-extra": "9.0.1",
+    "husky": "4.3.7",
     "jest": "26.6.3",
     "lint-staged": "10.5.3",
     "prettier": "2.2.1",
@@ -82,7 +83,15 @@
     "typescript": "4.0.5"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,jsx}": "npm run lint"
+    "**/*.{ts,tsx,js,jsx}": [
+      "npm run affected:lint",
+      "npm run format:write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "config": {
     "commitizen": {
