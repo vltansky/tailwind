@@ -1,4 +1,4 @@
-module.exports = (isProd) => ({
+module.exports = {
     prefix: '',
     purge: {
       enabled: isProd,
@@ -16,4 +16,4 @@ module.exports = (isProd) => ({
       extend: {},
     },
     plugins: [],
-});
+};
