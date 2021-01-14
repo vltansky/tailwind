@@ -1,3 +1,10 @@
+## [5.2.1](https://github.com/ngneat/tailwind/compare/v5.2.0...v5.2.1) (2021-01-14)
+
+
+### Bug Fixes
+
+* make sure Angular version does not depend on @nrwl/workspace ([#42](https://github.com/ngneat/tailwind/issues/42)) ([7fbda4a](https://github.com/ngneat/tailwind/commit/7fbda4ac61c9cce4b5ce59ce8523a2e156023918))
+
 # [5.2.0](https://github.com/ngneat/tailwind/compare/v5.1.0...v5.2.0) (2021-01-14)
 
 
