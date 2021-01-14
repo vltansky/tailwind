@@ -1,3 +1,17 @@
+# [5.2.0](https://github.com/ngneat/tailwind/compare/v5.1.0...v5.2.0) (2021-01-14)
+
+
+### Bug Fixes
+
+* tailwindcss-intellisense support ([#39](https://github.com/ngneat/tailwind/issues/39)) ([ae4e0fb](https://github.com/ngneat/tailwind/commit/ae4e0fbdbe48c7afddb2aa10cd25bad935c9fe1d))
+
+
+### Features
+
+* add a prompt to ask user if they want dark mode ([#41](https://github.com/ngneat/tailwind/issues/41)) ([be3a323](https://github.com/ngneat/tailwind/commit/be3a32354af7224570c852ec39daaa8a5dea1f3c))
+* add class="dark" to index.html with darkMode = class ([#40](https://github.com/ngneat/tailwind/issues/40)) ([edcf041](https://github.com/ngneat/tailwind/commit/edcf04171dfc4fa0ba3e52f98f9fd83fada4bfb0))
+* add option to enable [@tailwindcss](https://github.com/tailwindcss) plugins during setup ([#37](https://github.com/ngneat/tailwind/issues/37)) ([2d4b9a4](https://github.com/ngneat/tailwind/commit/2d4b9a40a0e5c07a15d36f209140691093c6f9f4))
+
 # [5.1.0](https://github.com/ngneat/tailwind/compare/v5.0.0...v5.1.0) (2021-01-07)
 
 
