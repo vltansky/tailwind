@@ -1,3 +1,12 @@
+## [5.2.2](https://github.com/ngneat/tailwind/compare/v5.2.1...v5.2.2) (2021-01-15)
+
+
+### Bug Fixes
+
+* change schema so plugins accepts a comma-separated string ([#43](https://github.com/ngneat/tailwind/issues/43)) ([cad2e8a](https://github.com/ngneat/tailwind/commit/cad2e8a742b1b4fd13e87b6e1ac41c17e08ac481))
+* **tailwind.config.js.template:** fix for syntax error in tailwind config template ([#45](https://github.com/ngneat/tailwind/issues/45)) ([2123e50](https://github.com/ngneat/tailwind/commit/2123e506235f2b6494c6a82302e28d646f6dfbe8)), closes [#44](https://github.com/ngneat/tailwind/issues/44)
+* honor tailwindConfig.purge.enabled if it exists in tailwind.config ([2b7a48d](https://github.com/ngneat/tailwind/commit/2b7a48db2da79e75e350a90de73ad38928b3e976)), closes [#46](https://github.com/ngneat/tailwind/issues/46)
+
 ## [5.2.1](https://github.com/ngneat/tailwind/compare/v5.2.0...v5.2.1) (2021-01-14)
 
 
