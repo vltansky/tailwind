@@ -9,8 +9,8 @@ export function patchPostCSS(
     console.error('Missing tailwind config :', tailwindConfig);
     return;
   }
-  if(tailwindConfig.purge){
-    tailwindConfig.purge.enabled = webpackConfig.mode === "production";
+  if (tailwindConfig.purge && tailwindConfig.purge.enabled == null) {
+    tailwindConfig.purge.enabled = webpackConfig.mode === 'production';
   }
   const pluginName = 'autoprefixer';
   for (const rule of webpackConfig.module.rules) {
