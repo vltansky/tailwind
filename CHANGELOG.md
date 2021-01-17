@@ -1,3 +1,10 @@
+## [5.2.3](https://github.com/ngneat/tailwind/compare/v5.2.2...v5.2.3) (2021-01-17)
+
+
+### Refactor
+
+* move `tailwind.config` import ([#50](https://github.com/ngneat/tailwind/issues/50)) ([aa46f25](https://github.com/ngneat/tailwind/commit/aa46f25d2970e30bf7a5fc9739e9fef8f35acad1))
+
 ## [5.2.2](https://github.com/ngneat/tailwind/compare/v5.2.1...v5.2.2) (2021-01-15)
 
 
