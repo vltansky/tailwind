@@ -2,10 +2,10 @@ import type { workspaces } from '@angular-devkit/core';
 import type { Rule, Tree } from '@angular-devkit/schematics';
 import type { InsertChange } from '@nrwl/workspace';
 import { normalize, JsonArray } from '@angular-devkit/core';
-const TAILWIND_CSS_FILEPATH = 'node_modules/tailwind/tailwind.css';
+const TAILWIND_CSS_FILEPATH = 'node_modules/tailwindcss/tailwind.css';
 const TAILWIND_STYLE_IMPORTS = `@import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';\n`;
+@import 'tailwindcss/utilities';`;
 const defaultStyleFileRegex = /(styles|global)\.(c|le|sc|sa)ss/;
 
 /**
@@ -40,6 +40,10 @@ function addTailwindToStylesFile(styleFilePath: string): Rule {
   return (tree: Tree) => {
     const styleContent = tree.read(styleFilePath)!.toString('utf-8');
 
+    if(styleContent.includes(`@import 'tailwindcss`)){
+      console.error(`Your styles (${styleFilePath}) already contains tailwindcss imports`)
+      return;
+    }
     const recorder = tree.beginUpdate(styleFilePath);
     recorder.insertRight(styleContent.length, TAILWIND_STYLE_IMPORTS);
 
