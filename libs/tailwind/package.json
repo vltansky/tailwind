@@ -1,7 +1,20 @@
 {
   "name": "@ngneat/tailwind",
-  "version": "5.0.0",
+  "version": "5.2.3",
   "main": "src/index.js",
   "schematics": "./collection.json",
-  "builders": "./builders.json"
+  "builders": "./builders.json",
+  "license": "MIT",
+  "description": "A schematic that adds TailwindCSS to Angular applications",
+  "author": "Chau Tran",
+  "keywords": [
+    "tailwindcss",
+    "angular",
+    "cli",
+    "schematics"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngneat/tailwind.git"
+  }
 }

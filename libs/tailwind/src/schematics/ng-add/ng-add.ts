@@ -16,7 +16,6 @@ import {
   getWorkspace,
   updateWorkspace,
 } from '@schematics/angular/utility/workspace';
-import { DEPENDENCIES } from '../../constants';
 import {
   addConfigFiles,
   getLatestNodeVersion,
@@ -24,7 +23,12 @@ import {
   updateProjectRootStyles,
   updateWorkspaceTargets,
 } from '../../utils';
-import type { TailwindSchematicsOptions } from '../schema';
+import { normalizeOptionsNg } from '../../utils/normalize-options-ng';
+import { updateIndexHtml } from '../../utils/update-index-html';
+import type {
+  NormalizedTailwindSchematicsOptions,
+  TailwindSchematicsOptions,
+} from '../schema';
 
 export default function (options: TailwindSchematicsOptions): Rule {
   return (tree, context) => {
@@ -33,19 +37,20 @@ export default function (options: TailwindSchematicsOptions): Rule {
       context.addTask(new RunSchematicTask('nx-setup', options));
       return tree;
     }
+    const normalizedOptions = normalizeOptionsNg(options, tree);
 
     return chain([
-      addPackageJsonDependencies(),
+      addPackageJsonDependencies(normalizedOptions.dependencies),
       installDependencies(),
-      setupProject(options),
+      setupProject(normalizedOptions),
     ])(tree, context);
   };
 }
 
-function addPackageJsonDependencies(): Rule {
+function addPackageJsonDependencies(dependencies: string[]): Rule {
   return (tree, context) => {
     return Promise.all(
-      [...DEPENDENCIES].map((dep) =>
+      dependencies.map((dep) =>
         getLatestNodeVersion(dep).then(({ name, version }) => {
           context.logger.info(`✅️ Added ${name}@${version}`);
           const nodeDependency: NodeDependency = {
@@ -69,9 +74,9 @@ function installDependencies(): Rule {
   };
 }
 
-function setupProject(options: TailwindSchematicsOptions): Rule {
+function setupProject(options: NormalizedTailwindSchematicsOptions): Rule {
   return chain([
-    addConfigFiles(options.enableTailwindInComponentsStyles),
+    addConfigFiles(options),
     updateWorkspaceTargets(
       options.project,
       (updateWorkspace as unknown) as typeof updateNxWorkspace
@@ -79,6 +84,11 @@ function setupProject(options: TailwindSchematicsOptions): Rule {
     updateProjectRootStyles(
       options.project,
       (getWorkspace as unknown) as typeof getNxWorkspace,
+      (updateWorkspace as unknown) as typeof updateNxWorkspace
+    ),
+    updateIndexHtml(
+      options.project,
+      options.darkMode,
       (updateWorkspace as unknown) as typeof updateNxWorkspace
     ),
   ]);

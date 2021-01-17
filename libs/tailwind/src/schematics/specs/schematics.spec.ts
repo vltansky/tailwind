@@ -3,6 +3,7 @@ import {
   UnitTestTree,
 } from '@angular-devkit/schematics/testing';
 import { join } from 'path';
+import { get } from 'lodash';
 import { DEPENDENCIES } from '../../constants';
 
 const schematicsTestOptions = {
@@ -53,6 +54,15 @@ const schematicsTestOptions = {
     stylesRootPath: './projects/foo/src/styles.scss',
   },
 } as const;
+
+function getProjectIndexPath(tree: UnitTestTree, projectName: string) {
+  const workspace = JSON.parse(tree.readContent('/angular.json'));
+
+  return get(
+    workspace,
+    `projects.${projectName}.architect.build.options.index`
+  );
+}
 
 const collectionPath = join(__dirname, '../../../collection.json');
 
@@ -147,6 +157,65 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
         .toPromise();
       expect(tree.exists('./tailwind.config.js')).toEqual(true);
       expect(tree.exists('./webpack.config.js')).toEqual(true);
+      expect(tree.readContent('./tailwind.config.js')).toContain(
+        `darkMode: false`
+      );
+      done();
+    });
+
+    it(`should add a tailwind config with darkMode set to 'class'`, async (done) => {
+      const tree = await schematicRunner
+        .runSchematicAsync(
+          schematic,
+          { style: 'scss', project: 'foo', darkMode: 'class' },
+          appTree
+        )
+        .toPromise();
+      expect(tree.readContent('./tailwind.config.js')).toContain(
+        `darkMode: 'class'`
+      );
+      const indexPath = getProjectIndexPath(tree, 'foo');
+      expect(tree.readContent(indexPath)).toContain('<body class="dark">');
+      done();
+    });
+
+    it(`should add a tailwind config with darkMode set to 'media'`, async (done) => {
+      const tree = await schematicRunner
+        .runSchematicAsync(
+          schematic,
+          { style: 'scss', project: 'foo', darkMode: 'media' },
+          appTree
+        )
+        .toPromise();
+      expect(tree.readContent('./tailwind.config.js')).toContain(
+        `darkMode: 'media'`
+      );
+      const indexPath = getProjectIndexPath(tree, 'foo');
+      expect(tree.readContent(indexPath)).toContain('<body>');
+      done();
+    });
+
+    it(`should add a tailwind config with all the plugins enabled`, async (done) => {
+      const plugins = ['aspect-ratio', 'forms', 'line-clamp', 'typography'];
+      const tree = await schematicRunner
+        .runSchematicAsync(
+          schematic,
+          {
+            style: 'scss',
+            project: 'foo',
+            plugins,
+          },
+          appTree
+        )
+        .toPromise();
+      for (const plugin of plugins) {
+        expect(tree.readContent('./tailwind.config.js')).toContain(
+          `require('@tailwindcss/${plugin}')`
+        );
+        expect(tree.readContent('./package.json')).toContain(
+          `@tailwindcss/${plugin}`
+        );
+      }
       done();
     });
   });

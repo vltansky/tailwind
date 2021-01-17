@@ -30,6 +30,33 @@ then execute the schematics:
 nx generate @ngneat/tailwind:nx-setup
 ```
 
+## Manual steps
+
+If your projects are already using a custom **Webpack** builder with a custom `webpack.config`, follow these steps to add **TailwindCSS** to your project
+
+- `npm i -D @ngneat/tailwind postcss` (or `yarn add -D @ngneat/tailwind postcss`)
+- Import `patchPostCSS` from `@ngneat/tailwind` in your `webpack.config`
+- Import your **TailwindCSS** config in your `webpack.config`
+- Before you return or modify the original Webpack config, call `patchPostCSS` with the following parameters:
+  - `webpackConfig`: the Webpack config
+  - `tailwindConfig`: the TailwindCSS config that you import
+  - `components?`: this flag will enable using TailwindCSS directives in components' stylesheets. Default to `false` because turning it on might impact your build time
+
+```js
+// example
+const { patchPostCSS } = require('@ngneat/tailwind');
+const tailwindConfig = require('relative/path/to/tailwind.config');
+
+module.exports = (config) => {
+  patchPostCSS(config, tailwindConfig, true);
+  return config;
+}
+```
+
+## Angular Material
+
+If you plan to use `@ngneat/tailwind` with `@angular/material`, please make sure that you setup `@angular/material` **before** `@ngneat/tailwind` because `@angular/material:ng-add` schematics will error out if it detects a custom Webpack in your `angular.json`.
+
 ## Purge
 
 `@ngneat/tailwind` uses built-in `purge` functionality by `tailwindcss` (under the hood, it
@@ -100,12 +127,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://nartc.me/"><img src="https://avatars1.githubusercontent.com/u/25516557?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Chau Tran</b></sub></a><br /><a href="#question-nartc" title="Answering Questions">💬</a> <a href="https://github.com/ngneat/tailwind/commits?author=nartc" title="Code">💻</a> <a href="https://github.com/ngneat/tailwind/commits?author=nartc" title="Documentation">📖</a> <a href="#example-nartc" title="Examples">💡</a> <a href="#ideas-nartc" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-nartc" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-nartc" title="Maintenance">🚧</a> <a href="https://github.com/ngneat/tailwind/pulls?q=is%3Apr+reviewed-by%3Anartc" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/ngneat/tailwind/commits?author=nartc" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://nartc.me/"><img src="https://avatars1.githubusercontent.com/u/25516557?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Chau Tran</b></sub></a><br /><a href="#question-nartc" title="Answering Questions">💬</a> <a href="https://github.com/ngneat/tailwind/commits?author=nartc" title="Code">💻</a> <a href="https://github.com/ngneat/tailwind/commits?author=nartc" title="Documentation">📖</a> <a href="#ideas-nartc" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/ngneat/tailwind/pulls?q=is%3Apr+reviewed-by%3Anartc" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://www.netbasal.com/"><img src="https://avatars1.githubusercontent.com/u/6745730?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Netanel Basal</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=NetanelBasal" title="Code">💻</a> <a href="#ideas-NetanelBasal" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://www.santoshyadav.dev/"><img src="https://avatars3.githubusercontent.com/u/11923975?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Santosh Yadav</b></sub></a><br /><a href="#ideas-santoshyadavdev" title="Ideas, Planning, & Feedback">🤔</a> <a href="#mentoring-santoshyadavdev" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://bilalkhoukhi.com/"><img src="https://avatars1.githubusercontent.com/u/4480581?v=4?s=75" width="75px;" alt=""/><br /><sub><b>BK</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=Bilal-io" title="Code">💻</a> <a href="#ideas-Bilal-io" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/beeman"><img src="https://avatars3.githubusercontent.com/u/36491?v=4?s=75" width="75px;" alt=""/><br /><sub><b>beeman</b></sub></a><br /><a href="#ideas-beeman" title="Ideas, Planning, & Feedback">🤔</a> <a href="#mentoring-beeman" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://github.com/beeman"><img src="https://avatars3.githubusercontent.com/u/36491?v=4?s=75" width="75px;" alt=""/><br /><sub><b>beeman</b></sub></a><br /><a href="#ideas-beeman" title="Ideas, Planning, & Feedback">🤔</a> <a href="#mentoring-beeman" title="Mentoring">🧑‍🏫</a> <a href="https://github.com/ngneat/tailwind/commits?author=beeman" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vltansky"><img src="https://avatars0.githubusercontent.com/u/5851280?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Vlad Tansky</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=vltansky" title="Code">💻</a></td>
+    <td align="center"><a href="https://abhinav.xyz/"><img src="https://avatars2.githubusercontent.com/u/10206236?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Abhinav Dinesh C</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=abhinavdc" title="Code">💻</a></td>
   </tr>
 </table>
 

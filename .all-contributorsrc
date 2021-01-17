@@ -20,12 +20,8 @@
         "question",
         "code",
         "doc",
-        "example",
         "ideas",
-        "infra",
-        "maintenance",
-        "review",
-        "test"
+        "review"
       ]
     },
     {
@@ -65,7 +61,8 @@
       "profile": "https://github.com/beeman",
       "contributions": [
         "ideas",
-        "mentoring"
+        "mentoring",
+        "code"
       ]
     },
     {
@@ -73,6 +70,15 @@
       "name": "Vlad Tansky",
       "avatar_url": "https://avatars0.githubusercontent.com/u/5851280?v=4",
       "profile": "https://github.com/vltansky",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "abhinavdc",
+      "name": "Abhinav Dinesh C",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10206236?v=4",
+      "profile": "https://abhinav.xyz/",
       "contributions": [
         "code"
       ]

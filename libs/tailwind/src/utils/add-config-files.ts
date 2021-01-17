@@ -7,19 +7,26 @@ import {
   Rule,
   url,
 } from '@angular-devkit/schematics';
+import { NormalizedTailwindSchematicsOptions } from '../schematics/schema';
 import { isInJest } from './is-in-jest';
 
-export function addConfigFiles(
-  enableTailwindInComponentsStyles: boolean,
-  appsDir?: string,
-  libsDir?: string
-): Rule {
+export function addConfigFiles({
+  enableTailwindInComponentsStyles,
+  darkMode,
+  appsDir,
+  libsDir,
+  plugins,
+  sourceRoot = 'src',
+}: NormalizedTailwindSchematicsOptions): Rule {
   return mergeWith(
     apply(url(isInJest() ? '../files' : './files'), [
       applyTemplates({
         enableTailwindInComponentsStyles,
+        darkMode,
         appsDir,
         libsDir,
+        plugins,
+        sourceRoot,
       }),
       move(normalize('./')),
     ])

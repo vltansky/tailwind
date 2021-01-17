@@ -1,6 +1,56 @@
-CHANGELOG
-## [5.0.0](https://github.com/ngneat/tailwind/compare/v3.0.7...v5.0.0) (2020-12-28)
+## [5.2.3](https://github.com/ngneat/tailwind/compare/v5.2.2...v5.2.3) (2021-01-17)
 
+
+### Refactor
+
+* move `tailwind.config` import ([#50](https://github.com/ngneat/tailwind/issues/50)) ([aa46f25](https://github.com/ngneat/tailwind/commit/aa46f25d2970e30bf7a5fc9739e9fef8f35acad1))
+
+## [5.2.2](https://github.com/ngneat/tailwind/compare/v5.2.1...v5.2.2) (2021-01-15)
+
+
+### Bug Fixes
+
+* change schema so plugins accepts a comma-separated string ([#43](https://github.com/ngneat/tailwind/issues/43)) ([cad2e8a](https://github.com/ngneat/tailwind/commit/cad2e8a742b1b4fd13e87b6e1ac41c17e08ac481))
+* **tailwind.config.js.template:** fix for syntax error in tailwind config template ([#45](https://github.com/ngneat/tailwind/issues/45)) ([2123e50](https://github.com/ngneat/tailwind/commit/2123e506235f2b6494c6a82302e28d646f6dfbe8)), closes [#44](https://github.com/ngneat/tailwind/issues/44)
+* honor tailwindConfig.purge.enabled if it exists in tailwind.config ([2b7a48d](https://github.com/ngneat/tailwind/commit/2b7a48db2da79e75e350a90de73ad38928b3e976)), closes [#46](https://github.com/ngneat/tailwind/issues/46)
+
+## [5.2.1](https://github.com/ngneat/tailwind/compare/v5.2.0...v5.2.1) (2021-01-14)
+
+
+### Bug Fixes
+
+* make sure Angular version does not depend on @nrwl/workspace ([#42](https://github.com/ngneat/tailwind/issues/42)) ([7fbda4a](https://github.com/ngneat/tailwind/commit/7fbda4ac61c9cce4b5ce59ce8523a2e156023918))
+
+# [5.2.0](https://github.com/ngneat/tailwind/compare/v5.1.0...v5.2.0) (2021-01-14)
+
+
+### Bug Fixes
+
+* tailwindcss-intellisense support ([#39](https://github.com/ngneat/tailwind/issues/39)) ([ae4e0fb](https://github.com/ngneat/tailwind/commit/ae4e0fbdbe48c7afddb2aa10cd25bad935c9fe1d))
+
+
+### Features
+
+* add a prompt to ask user if they want dark mode ([#41](https://github.com/ngneat/tailwind/issues/41)) ([be3a323](https://github.com/ngneat/tailwind/commit/be3a32354af7224570c852ec39daaa8a5dea1f3c))
+* add class="dark" to index.html with darkMode = class ([#40](https://github.com/ngneat/tailwind/issues/40)) ([edcf041](https://github.com/ngneat/tailwind/commit/edcf04171dfc4fa0ba3e52f98f9fd83fada4bfb0))
+* add option to enable [@tailwindcss](https://github.com/tailwindcss) plugins during setup ([#37](https://github.com/ngneat/tailwind/issues/37)) ([2d4b9a4](https://github.com/ngneat/tailwind/commit/2d4b9a40a0e5c07a15d36f209140691093c6f9f4))
+
+# [5.1.0](https://github.com/ngneat/tailwind/compare/v5.0.0...v5.1.0) (2021-01-07)
+
+
+### Bug Fixes
+
+* add sourceRoot in webpack config template ([92bb009](https://github.com/ngneat/tailwind/commit/92bb0099492f68afc984dd1a93dfb3bb91a78a21))
+* move patchPostCss to separate file and use webpack types ([028f94e](https://github.com/ngneat/tailwind/commit/028f94e79ff0357858f2cf8fccc2791432d9ce33))
+* use require instead of import syntax in webpack config template ([40dbb90](https://github.com/ngneat/tailwind/commit/40dbb90161f3f701af2bf8b57cb4a803e4d89b3c))
+
+
+### Features
+
+* add option to enable dark mode during setup ([#34](https://github.com/ngneat/tailwind/issues/34)) ([9e442e5](https://github.com/ngneat/tailwind/commit/9e442e56360519985df36842826535693946cb8e))
+* put patchPostCSS into package ([#33](https://github.com/ngneat/tailwind/issues/33)) ([2bdc57a](https://github.com/ngneat/tailwind/commit/2bdc57ae42ae44b18f734c65cf0687ee6c93e3af))
+
+# [5.0.0](https://github.com/ngneat/tailwind/compare/v3.0.7...v5.0.0) (2020-12-28)
 
 ### ⚠ BREAKING CHANGES
 
@@ -38,7 +88,7 @@ CHANGELOG
 * add [@vltansky](https://github.com/vltansky) as a contributor ([8de935b](https://github.com/ngneat/tailwind/commit/8de935bea25a7faf480cf5389cc6dd4abf4763d0))
 * update GIF ([ded61b9](https://github.com/ngneat/tailwind/commit/ded61b9d589e28d3f51f9491b7a23481a47e82c8))
 
-## [4.0.0](https://github.com/ngneat/tailwind/compare/v3.0.7...v4.0.0) (2020-12-28)
+# [4.0.0](https://github.com/ngneat/tailwind/compare/v3.0.7...v4.0.0) (2020-12-28)
 
 `ngneat/tailwind` v4 will have Webpack config to ride on top of Angular's Webpack configuration. We add TailwindCSS plugins directly on Angular PostCSS config by patching the config.
 
@@ -181,7 +231,7 @@ If you're already setup with `ngneat/tailwind` before v4, please check out the r
 
 - update test actions ([2646539](https://github.com/ngneat/tailwind/commit/26465395e42b02aea848a98d094327fe1c34a018))
 
-## [3.0.0](https://github.com/ngneat/tailwind/compare/v1.1.0...v3.0.0) (2020-12-03)
+# [3.0.0](https://github.com/ngneat/tailwind/compare/v1.1.0...v3.0.0) (2020-12-03)
 
 ### ⚠ BREAKING CHANGES
 
@@ -216,7 +266,7 @@ If you're already setup with `ngneat/tailwind` before v4, please check out the r
 - adjust github actions ([e88d78d](https://github.com/ngneat/tailwind/commit/e88d78d89d9cd6064a7600f02ef487da4fa6e80e))
 - update test actions ([a4c89dc](https://github.com/ngneat/tailwind/commit/a4c89dcda6a3672b29063902a059ab267d0beae8))
 
-## [2.0.0](https://github.com/ngneat/tailwind/compare/v1.1.0...v2.0.0) (2020-12-03)
+# [2.0.0](https://github.com/ngneat/tailwind/compare/v1.1.0...v2.0.0) (2020-12-03)
 
 ### ⚠ BREAKING CHANGES
 

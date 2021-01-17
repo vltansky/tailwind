@@ -1,19 +1,18 @@
-module.exports = (isProd) => ({
+module.exports = {
     prefix: '',
     purge: {
-      enabled: isProd,
       content: [<% if (appsDir) {%>
         './<%= appsDir %>/**/*.{html,ts}',<% } else {%>
-        '**/*.{html,ts}',<% } %><% if (libsDir) {%>
+        './<%= sourceRoot %>/**/*.{html,ts}',<% } %><% if (libsDir) {%>
         './<%= libsDir %>/**/*.{html,ts}',<% } %>
       ]
     },
-    darkMode: false, // or 'media' or 'class'
+    darkMode: <% if (darkMode !== 'none') {%>'<%= darkMode %>'<% } else { %>false<% } %>, // or 'media' or 'class'
     theme: {
       extend: {},
     },
     variants: {
       extend: {},
     },
-    plugins: [],
-});
+    plugins: [<%= plugins %>],
+};

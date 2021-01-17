@@ -1,6 +1,6 @@
 {
   "name": "@ngneat/tailwind",
-  "version": "5.0.0",
+  "version": "5.2.3",
   "license": "MIT",
   "description": "A schematic that adds TailwindCSS to Angular applications",
   "author": "Chau Tran",
@@ -28,11 +28,11 @@
     "affected:build": "nx affected:build",
     "affected:e2e": "nx affected:e2e",
     "affected:test": "nx affected:test",
-    "affected:lint": "nx affected:lint",
+    "affected:lint": "nx workspace-lint && nx affected:lint --base=main",
     "affected:dep-graph": "nx affected:dep-graph",
     "affected": "nx affected",
     "format": "nx format:write",
-    "format:write": "nx format:write",
+    "format:write": "nx format:write --base=main",
     "format:check": "nx format:check",
     "update": "ng update @nrwl/workspace",
     "workspace-schematic": "nx workspace-schematic",
@@ -42,7 +42,7 @@
     "contributors:generate": "all-contributors init",
     "commit": "git-cz",
     "publish": "cd dist/libs/tailwind && npm publish",
-    "release": "standard-version"
+    "release": "release-it"
   },
   "publishConfig": {
     "access": "public"
@@ -57,10 +57,13 @@
     "@nrwl/nx-plugin": "10.4.4",
     "@nrwl/tao": "10.4.4",
     "@nrwl/workspace": "10.4.4",
+    "@release-it/bumper": "2.0.0",
+    "@release-it/conventional-changelog": "2.0.0",
     "@schematics/angular": "10.2.0",
     "@types/fs-extra": "9.0.4",
     "@types/jest": "26.0.16",
     "@types/node": "14.14.10",
+    "@types/webpack": "4.41.25",
     "@typescript-eslint/eslint-plugin": "4.9.0",
     "@typescript-eslint/parser": "4.9.0",
     "all-contributors-cli": "6.19.0",
@@ -70,19 +73,28 @@
     "eslint": "7.15.0",
     "eslint-config-prettier": "6.15.0",
     "fs-extra": "9.0.1",
+    "husky": "4.3.7",
     "jest": "26.6.3",
     "lint-staged": "10.5.3",
     "prettier": "2.2.1",
     "pretty-quick": "3.1.0",
+    "release-it": "14.2.2",
     "rimraf": "3.0.2",
-    "standard-version": "9.0.0",
     "ts-jest": "26.4.4",
     "ts-node": "9.1.0",
     "tslint": "6.0.0",
     "typescript": "4.0.5"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,jsx}": "npm run lint"
+    "**/*.{ts,tsx,js,jsx}": [
+      "npm run affected:lint",
+      "npm run format:write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "config": {
     "commitizen": {
@@ -130,55 +142,5 @@
         }
       }
     }
-  },
-  "standard-version": {
-    "bumpFiles": [
-      "package.json",
-      "package-lock.json",
-      "libs/tailwind/package.json"
-    ],
-    "header": "CHANGELOG",
-    "types": [
-      {
-        "type": "feat",
-        "section": "Features/Enhancements"
-      },
-      {
-        "type": "fix",
-        "section": "Bug Fixes"
-      },
-      {
-        "type": "chore",
-        "section": "Chores"
-      },
-      {
-        "type": "docs",
-        "section": "Documentations"
-      },
-      {
-        "type": "style",
-        "section": "Formatting"
-      },
-      {
-        "type": "refactor",
-        "section": "Refactors"
-      },
-      {
-        "type": "perf",
-        "section": "Performances"
-      },
-      {
-        "type": "test",
-        "section": "Tests"
-      },
-      {
-        "type": "build",
-        "section": "Build"
-      },
-      {
-        "type": "ci",
-        "section": "CI/CD"
-      }
-    ]
   }
 }
