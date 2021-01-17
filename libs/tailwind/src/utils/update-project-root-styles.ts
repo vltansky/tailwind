@@ -45,7 +45,7 @@ function addTailwindToStylesFile(styleFilePath: string): Rule {
       return;
     }
     const recorder = tree.beginUpdate(styleFilePath);
-    recorder.insertRight(styleContent.length, TAILWIND_STYLE_IMPORTS);
+    recorder.insertLeft(-1, `${TAILWIND_STYLE_IMPORTS}\n`);
 
     tree.commitUpdate(recorder);
   };
