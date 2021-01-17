@@ -1,4 +1,5 @@
 import type { Configuration, RuleSetLoader, RuleSetUseItem } from 'webpack';
+import * as path from 'path';
 
 export function patchPostCSS(
   webpackConfig: Configuration,
@@ -54,4 +55,16 @@ export function patchPostCSS(
       };
     }
   }
+}
+
+export function addTailwindCSS(
+  webpackConfig: Configuration,
+  { tailwindConfig = null, enableInComponentsStyles = false } = {}
+) {
+  if(!tailwindConfig){
+    try{
+      tailwindConfig = require(path.join(webpackConfig.resolve.roots[0],'tailwind.config.js'))
+    }catch(err){}
+  }
+  return patchPostCSS(webpackConfig, tailwindConfig, enableInComponentsStyles);
 }
