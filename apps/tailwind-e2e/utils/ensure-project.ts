@@ -5,8 +5,8 @@ import {
   detectPackageManager,
   getPackageManagerInstallCommand,
 } from '@nrwl/workspace/src/utils/detect-package-manager';
-import { exec, execSync } from 'child_process';
-import { ensureDirSync, readFileSync, writeFileSync, removeSync, moveSync, existsSync, renameSync } from 'fs-extra';
+import { execSync } from 'child_process';
+import { ensureDirSync, readFileSync, writeFileSync, removeSync, moveSync, existsSync } from 'fs-extra';
 import { tmpdir } from 'os';
 
 function runNxNewCommand(args?: string, silent?: boolean) {
