@@ -30,6 +30,33 @@ then execute the schematics:
 nx generate @ngneat/tailwind:nx-setup
 ```
 
+## Manual steps
+
+If your projects are already using a custom **Webpack** builder with a custom `webpack.config`, follow these steps to add **TailwindCSS** to your project
+
+- `npm i -D @ngneat/tailwind postcss` (or `yarn add -D @ngneat/tailwind postcss`)
+- Import `patchPostCSS` from `@ngneat/tailwind` in your `webpack.config`
+- Import your **TailwindCSS** config in your `webpack.config`
+- Before you return or modify the original Webpack config, call `patchPostCSS` with the following parameters:
+  - `webpackConfig`: the Webpack config
+  - `tailwindConfig`: the TailwindCSS config that you import
+  - `components?`: this flag will enable using TailwindCSS directives in components' stylesheets. Default to `false` because turning it on might impact your build time
+
+```js
+// example
+const { patchPostCSS } = require('@ngneat/tailwind');
+const tailwindConfig = require('relative/path/to/tailwind.config');
+
+module.exports = (config) => {
+  patchPostCSS(config, tailwindConfig, true);
+  return config;
+}
+```
+
+## Angular Material
+
+If you plan to use `@ngneat/tailwind` with `@angular/material`, please make sure that you setup `@angular/material` **before** `@ngneat/tailwind` because `@angular/material:ng-add` schematics will error out if it detects a custom Webpack in your `angular.json`.
+
 ## Purge
 
 `@ngneat/tailwind` uses built-in `purge` functionality by `tailwindcss` (under the hood, it
