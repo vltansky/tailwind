@@ -20,12 +20,8 @@
         "question",
         "code",
         "doc",
-        "example",
         "ideas",
-        "infra",
-        "maintenance",
-        "review",
-        "test"
+        "review"
       ]
     },
     {
