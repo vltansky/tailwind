@@ -1,19 +1,19 @@
 import { Tree } from '@angular-devkit/schematics';
-import { getWorkspace as getWorkspaceConfig } from '@schematics/angular/utility/config';
+import { getWorkspace } from '@schematics/angular/utility/workspace';
 import {
   NormalizedTailwindSchematicsOptions,
   TailwindSchematicsOptions,
 } from '../schematics/schema';
 import { getDependencies } from './get-dependencies';
 
-export function normalizeOptionsNg(
+export async function normalizeOptionsNg(
   options: TailwindSchematicsOptions,
   tree: Tree
-): NormalizedTailwindSchematicsOptions {
+): Promise<NormalizedTailwindSchematicsOptions> {
   const { plugins, dependencies } = getDependencies(options.plugins);
   const darkMode = options.darkMode || 'none';
 
-  const workspace = getWorkspaceConfig(tree);
+  const workspace = await getWorkspace(tree);
   const sourceRoot = workspace.projects[options.project]?.sourceRoot;
 
   return {

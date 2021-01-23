@@ -6,7 +6,15 @@ import {
   getPackageManagerInstallCommand,
 } from '@nrwl/workspace/src/utils/detect-package-manager';
 import { exec, execSync } from 'child_process';
-import { ensureDirSync, fstat, readFileSync, writeFileSync, removeSync, moveSync, existsSync } from 'fs-extra';
+import {
+  ensureDirSync,
+  fstat,
+  readFileSync,
+  writeFileSync,
+  removeSync,
+  moveSync,
+  existsSync,
+} from 'fs-extra';
 import { tmpdir } from 'os';
 
 function runNxNewCommand(args?: string, silent?: boolean) {
@@ -76,15 +84,17 @@ export function ensureNxProject(
   newNxProject(pluginNpmName, pluginDistPath, cli);
 }
 
-function remove(folder){
+export function remove(folder: string) {
   const parentFolder = path.basename(folder);
-  const folderName = path.basename(folder)
-  try{
+  const folderName = path.basename(folder);
+  try {
     removeSync(folder);
-  }catch(err){
-    execSync(`rm -rf ${folderName}`, {cwd: parentFolder});
-    if(existsSync(folder)){
-      throw new Error(`didnt succeed to remove folder ${folder}: ${err.toString()}`);
+  } catch (err) {
+    execSync(`rm -rf ${folderName}`, { cwd: parentFolder });
+    if (existsSync(folder)) {
+      throw new Error(
+        `didnt succeed to remove folder ${folder}: ${err.toString()}`
+      );
     }
   }
 }
@@ -93,10 +103,11 @@ function runNgNewCommand() {
   const localTmpDir = `./tmp/nx-e2e`;
   const osTmpDir = tmpdir();
   const projPath = path.join(osTmpDir, 'proj');
-  remove(projPath)
+  remove(projPath);
   remove(localTmpDir);
   execSync(
-    `npx @angular/cli new proj --defaults --minimal --routing=false --skip-git --skip-install --style=scss`, {cwd: osTmpDir}
+    `npx @angular/cli new proj --defaults --minimal --routing=false --skip-git --skip-install --style=scss`,
+    { cwd: osTmpDir }
   );
   moveSync(projPath, path.join(localTmpDir, 'proj'));
 }
