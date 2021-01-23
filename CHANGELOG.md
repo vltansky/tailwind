@@ -1,3 +1,10 @@
+## [5.2.4](https://github.com/ngneat/tailwind/compare/v5.2.3...v5.2.4) (2021-01-23)
+
+
+### Bug Fixes
+
+* **ng-add:** fix getWorkspace function ([a0330f6](https://github.com/ngneat/tailwind/commit/a0330f6db59b69944411aef97ff84146cce82260))
+
 ## [5.2.3](https://github.com/ngneat/tailwind/compare/v5.2.2...v5.2.3) (2021-01-17)
 
 
