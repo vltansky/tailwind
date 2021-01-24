@@ -1,3 +1,10 @@
+# [6.0.0](https://github.com/ngneat/tailwind/compare/v5.2.4...v6.0.0) (2021-01-24)
+
+
+### Bug Fixes
+
+* remove postcss8 dependency ([#49](https://github.com/ngneat/tailwind/issues/49)) ([89c9940](https://github.com/ngneat/tailwind/commit/89c99400e9b75c862cce91361e39363220eaeae8))
+
 ## [5.2.4](https://github.com/ngneat/tailwind/compare/v5.2.3...v5.2.4) (2021-01-23)
 
 
