@@ -74,6 +74,10 @@ default, `@ngneat/tailwind` sets the `content` to any **HTML** and any **TS** fi
 
 This behavior can be modified as the consumers see fit.
 
+## CSS Preprocessors
+
+If you're using CSS Preprocessors (SASS/SCSS, LESS, Stylus) in your application, please check out [TailwindCSS's Using with Preprocessors guide](https://tailwindcss.com/docs/using-with-preprocessors#using-sass-less-or-stylus)
+
 ## Contributing
 
 - Fork this repo and clone the fork on your machine.
