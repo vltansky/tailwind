@@ -42,8 +42,8 @@ export function patchPostCSS(
         );
 
         if (insertIndex !== -1) {
-          if(components && rule.exclude){
-            _postcssOptions.plugins.splice(insertIndex, 0, ['postcss-ng-tailwind-darkmode', tailwindConfig])
+          if(components && rule.exclude && tailwindConfig.darkMode === 'class'){
+            _postcssOptions.plugins.splice(insertIndex, 0, ['postcss-ng-tailwind-in-components', { parentSelector: '.dark'}])
           }
           _postcssOptions.plugins.splice(insertIndex, 0, [
             'tailwindcss',
