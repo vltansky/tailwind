@@ -1,6 +1,6 @@
 import type { Configuration, RuleSetLoader, RuleSetUseItem } from 'webpack';
 
-export function patchPostCSS(
+export function addTailwindCSS(
   webpackConfig: Configuration,
   tailwindConfig,
   components = false
@@ -54,4 +54,12 @@ export function patchPostCSS(
       };
     }
   }
+}
+
+export function patchPostCSS(
+  webpackConfig: Configuration,
+  tailwindConfig,
+  components = false
+) {
+  return addTailwindCSS(webpackConfig, tailwindConfig, components);
 }

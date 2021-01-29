@@ -44,20 +44,20 @@ nx generate @ngneat/tailwind:nx-setup
 If your projects are already using a custom **Webpack** builder with a custom `webpack.config`, follow these steps to add **TailwindCSS** to your project
 
 - `npm i -D @ngneat/tailwind postcss` (or `yarn add -D @ngneat/tailwind postcss`)
-- Import `patchPostCSS` from `@ngneat/tailwind` in your `webpack.config`
+- Import `addTailwindCSS` from `@ngneat/tailwind` in your `webpack.config`
 - Import your **TailwindCSS** config in your `webpack.config`
-- Before you return or modify the original Webpack config, call `patchPostCSS` with the following parameters:
+- Before you return or modify the original Webpack config, call `addTailwindCSS` with the following parameters:
   - `webpackConfig`: the Webpack config
   - `tailwindConfig`: the TailwindCSS config that you import
   - `components?`: this flag will enable using TailwindCSS directives in components' stylesheets. Default to `false` because turning it on might impact your build time
 
 ```js
 // example
-const { patchPostCSS } = require('@ngneat/tailwind');
+const { addTailwindCSS } = require('@ngneat/tailwind');
 const tailwindConfig = require('relative/path/to/tailwind.config');
 
 module.exports = (config) => {
-  patchPostCSS(config, tailwindConfig, true);
+  addTailwindCSS(config, tailwindConfig, true);
   return config;
 }
 ```

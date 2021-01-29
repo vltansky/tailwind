@@ -55,14 +55,14 @@
 ### Bug Fixes
 
 * add sourceRoot in webpack config template ([92bb009](https://github.com/ngneat/tailwind/commit/92bb0099492f68afc984dd1a93dfb3bb91a78a21))
-* move patchPostCss to separate file and use webpack types ([028f94e](https://github.com/ngneat/tailwind/commit/028f94e79ff0357858f2cf8fccc2791432d9ce33))
+* move addTailwindCSS to separate file and use webpack types ([028f94e](https://github.com/ngneat/tailwind/commit/028f94e79ff0357858f2cf8fccc2791432d9ce33))
 * use require instead of import syntax in webpack config template ([40dbb90](https://github.com/ngneat/tailwind/commit/40dbb90161f3f701af2bf8b57cb4a803e4d89b3c))
 
 
 ### Features
 
 * add option to enable dark mode during setup ([#34](https://github.com/ngneat/tailwind/issues/34)) ([9e442e5](https://github.com/ngneat/tailwind/commit/9e442e56360519985df36842826535693946cb8e))
-* put patchPostCSS into package ([#33](https://github.com/ngneat/tailwind/issues/33)) ([2bdc57a](https://github.com/ngneat/tailwind/commit/2bdc57ae42ae44b18f734c65cf0687ee6c93e3af))
+* put addTailwindCSS into package ([#33](https://github.com/ngneat/tailwind/issues/33)) ([2bdc57a](https://github.com/ngneat/tailwind/commit/2bdc57ae42ae44b18f734c65cf0687ee6c93e3af))
 
 # [5.0.0](https://github.com/ngneat/tailwind/compare/v3.0.7...v5.0.0) (2020-12-28)
 
