@@ -1,10 +1,16 @@
 import type { Configuration, RuleSetLoader, RuleSetUseItem } from 'webpack';
 
-export function addTailwindPlugin(
-  webpackConfig: Configuration,
+export interface AddTailwindParams {
+  webpackConfig: Configuration;
+  tailwindConfig: Record<string, unknown> & { purge?: { enabled?: boolean } };
+  patchComponentsStyles?: boolean;
+}
+
+export function addTailwindPlugin({
+  webpackConfig,
   tailwindConfig,
-  components = false
-) {
+  patchComponentsStyles = false,
+}: AddTailwindParams) {
   if (!tailwindConfig) {
     console.error('Missing tailwind config :', tailwindConfig);
     return;
@@ -17,7 +23,7 @@ export function addTailwindPlugin(
     const ruleSetUseItems = rule.use as RuleSetUseItem[];
     if (
       !(ruleSetUseItems && ruleSetUseItems.length > 0) ||
-      (!components && rule.exclude)
+      (!patchComponentsStyles && rule.exclude)
     ) {
       continue;
     }
