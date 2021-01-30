@@ -1,1 +1,1 @@
-export * from './patch-post-css';
+export * from './add-tailwind-plugin';
