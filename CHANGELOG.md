@@ -1,3 +1,19 @@
+## [6.0.2](https://github.com/ngneat/tailwind/compare/v6.0.1...v6.0.2) (2021-01-30)
+
+
+### Bug Fixes
+
+* add patchPostCss back to support old version ([7d583a0](https://github.com/ngneat/tailwind/commit/7d583a03ec3a9f14adea69ae9bdd2755da7cae82))
+* adjust template and update README ([0125f50](https://github.com/ngneat/tailwind/commit/0125f50c0e31efe928f02c261cfe50c18925df69))
+
+## [6.0.1](https://github.com/ngneat/tailwind/compare/v6.0.0...v6.0.1) (2021-01-30)
+
+
+### Bug Fixes
+
+* change patchPostCss to addTailwindPlugin ([55fa8fa](https://github.com/ngneat/tailwind/commit/55fa8faa72731b79f4c24431b31dceff06850b30))
+* ignore config files if exist ([f3508a8](https://github.com/ngneat/tailwind/commit/f3508a8d40f08472df36991244e86521808fd2b2)), closes [#61](https://github.com/ngneat/tailwind/issues/61)
+
 # [6.0.0](https://github.com/ngneat/tailwind/compare/v5.2.4...v6.0.0) (2021-01-24)
 
 
