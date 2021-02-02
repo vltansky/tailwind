@@ -50,10 +50,14 @@ export function addTailwindPlugin({
           );
 
           if (insertIndex !== -1) {
-            if(patchComponentsStyles && rule.exclude && tailwindConfig.darkMode === 'class'){
+            if (
+              patchComponentsStyles &&
+              rule.exclude &&
+              tailwindConfig.darkMode === 'class'
+            ) {
               insertPlugin(_postcssOptions.plugins, insertIndex, [
                 'postcss-ng-tailwind-in-components',
-                { parentSelector: '.dark'},
+                { parentSelector: '.dark' },
               ]);
             }
             insertPlugin(_postcssOptions.plugins, insertIndex, [
@@ -108,7 +112,7 @@ function getInsertIndex(
 function insertPlugin(
   plugins: unknown[],
   index: number,
-  tailwindPlugin: unknown
+  pluginToInsert: unknown
 ): void {
-  plugins.splice(index, 0, tailwindPlugin);
+  plugins.splice(index, 0, pluginToInsert);
 }

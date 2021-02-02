@@ -11,9 +11,9 @@ This schematic will add [Tailwind CSS](https://tailwindcss.com/) to your [Angula
 |`@ngneat/tailwind`|AngularCLI|
 |------|-----------|
 |v6.x.x| >= v11.1.x|
-|v5.2.4| < v11.1.x |
+|v5.2.5| < v11.1.x |
 
-The main difference is Angular CLI v11.1+ uses `PostCSS 8` already so we remove that from our dependencies list. To use this schematics at specific version, please use this syntax: `ng add @ngneat/tailwind@5.2.4` or `npm i -D @ngneat/tailwind@5.2.4`
+The main difference is Angular CLI v11.1+ uses `PostCSS 8` already so we remove that from our dependencies list. To use this schematics at specific version, please use this syntax: `ng add @ngneat/tailwind@5.2.5` or `npm i -D @ngneat/tailwind@5.2.5`
 
 ## Usage
 

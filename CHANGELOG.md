@@ -1,3 +1,10 @@
+## [6.0.3](https://github.com/ngneat/tailwind/compare/v6.0.2...v6.0.3) (2021-02-01)
+
+
+### Bug Fixes
+
+* [@apply](https://github.com/apply) darkmode in components ([#58](https://github.com/ngneat/tailwind/issues/58)) ([816b6ee](https://github.com/ngneat/tailwind/commit/816b6ee798e32c47990df05359d1a89666534e21))
+
 ## [6.0.2](https://github.com/ngneat/tailwind/compare/v6.0.1...v6.0.2) (2021-01-30)
 
 
