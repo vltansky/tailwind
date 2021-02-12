@@ -100,6 +100,29 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
       });
     }
 
+    function createStyleFile(tree, name){
+      ['css', 'scss', 'less'].forEach(ext => {
+        if(!tree.exists(name)){
+          tree.create(name, '');
+        }
+      })
+    }
+
+    function useStylesConfig(tree, config){
+      const workspace = JSON.parse(tree.readContent('./angular.json'));
+      workspace.projects.foo.architect.build.options.styles = config;
+      tree.overwrite('angular.json', JSON.stringify(workspace, null, 2));
+    }
+
+    function checkStylesFile(tree, stylesFile){
+      expect(tree.exists(stylesFile)).toEqual(true);
+      const content = tree.readContent(stylesFile);
+      const check = content.includes('tailwind');
+      if(!check){
+        throw `didnt find tailwindcss imports in ${stylesFile}`;
+      }
+    }
+
     it('should add proper packages to devDependencies', async (done) => {
       const tree = await schematicRunner
         .runSchematicAsync(
@@ -218,5 +241,62 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
       }
       done();
     });
+
+
+    describe('styles', () => {
+      test.each([
+        'global.css',
+        'global.scss',
+        'global.less',
+        'styles.less',
+        'styles.css'
+      ])('should patch %s', async(name) => {
+        const fileName = `src/${name}`;
+        createStyleFile(appTree, fileName);
+        useStylesConfig(appTree, [fileName]);
+        const tree = await schematicRunner
+          .runSchematicAsync(
+            schematic,
+            {
+              style: 'scss',
+              project: 'foo',
+            },
+            appTree
+          )
+          .toPromise();
+
+        expect(() =>
+          checkStylesFile(tree, fileName)
+        ).not.toThrow();
+      });
+
+    it(`should not patch wrong.css`, async (done) => {
+        useStylesConfig(appTree, ['src/wrong.css']);
+        const tree = await schematicRunner
+          .runSchematicAsync(
+            schematic,
+            {
+              style: 'scss',
+              project: 'foo',
+            },
+            appTree
+          )
+          .toPromise();
+
+        expect(() =>
+          checkStylesFile(tree, './src/wrong.css')
+        ).toThrow();
+
+      // should set styles config to node_modules/tailwindcss/tailwind.css
+        expect(() => {
+          expect(tree.readContent('./angular.json')).toContain(
+            'node_modules/tailwindcss/tailwind.css'
+          );
+        }).not.toThrow();
+        done();
+    });
+
+    })
   });
+
 });
