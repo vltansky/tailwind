@@ -29,8 +29,8 @@ same as above. If you setup your Nx Workspace with `NxCLI`, follow the steps:
 Install `@ngneat/tailwind` first:
 
 ```
-npm i -D @ngneat/tailwind postcss
-yarn add -D @ngneat/tailwind postcss
+npm i -D @ngneat/tailwind tailwindcss postcss
+yarn add -D @ngneat/tailwind tailwindcss postcss
 ```
 
 then execute the schematics:
