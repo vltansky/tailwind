@@ -2,11 +2,13 @@ import { normalize } from '@angular-devkit/core';
 import {
   apply,
   applyTemplates,
+  forEach,
   mergeWith,
   move,
   Rule,
   url,
 } from '@angular-devkit/schematics';
+import { parse } from 'path';
 import { NormalizedTailwindSchematicsOptions } from '../schematics/schema';
 import { isInJest } from './is-in-jest';
 
@@ -18,17 +20,22 @@ export function addConfigFiles({
   plugins,
   sourceRoot = 'src',
 }: NormalizedTailwindSchematicsOptions): Rule {
-  return mergeWith(
-    apply(url(isInJest() ? '../files' : './files'), [
-      applyTemplates({
-        enableTailwindInComponentsStyles,
-        darkMode,
-        appsDir,
-        libsDir,
-        plugins,
-        sourceRoot,
-      }),
-      move(normalize('./')),
-    ])
-  );
+  return (tree, context) =>
+    mergeWith(
+      apply(url(isInJest() ? '../files' : './files'), [
+        forEach((entry) => {
+          const entryName = parse(entry.path.split('/').pop());
+          return tree.exists(`./${entryName.name}`) ? null : entry;
+        }),
+        applyTemplates({
+          enableTailwindInComponentsStyles,
+          darkMode,
+          appsDir,
+          libsDir,
+          plugins,
+          sourceRoot,
+        }),
+        move(normalize('./')),
+      ])
+    )(tree, context);
 }

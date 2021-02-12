@@ -6,6 +6,15 @@ This schematic will add [Tailwind CSS](https://tailwindcss.com/) to your [Angula
 
 [demo]: https://github.com/ngneat/tailwind/raw/master/assets/ngneat-tailwind.gif
 
+## Versions
+
+|`@ngneat/tailwind`|AngularCLI|
+|------|-----------|
+|v6.x.x| >= v11.1.x|
+|v5.2.5| < v11.1.x |
+
+The main difference is Angular CLI v11.1+ uses `PostCSS 8` already so we remove that from our dependencies list. To use this schematics at specific version, please use this syntax: `ng add @ngneat/tailwind@5.2.5` or `npm i -D @ngneat/tailwind@5.2.5`
+
 ## Usage
 
 ```
@@ -35,20 +44,24 @@ nx generate @ngneat/tailwind:nx-setup
 If your projects are already using a custom **Webpack** builder with a custom `webpack.config`, follow these steps to add **TailwindCSS** to your project
 
 - `npm i -D @ngneat/tailwind postcss` (or `yarn add -D @ngneat/tailwind postcss`)
-- Import `patchPostCSS` from `@ngneat/tailwind` in your `webpack.config`
+- Import `addTailwindConfig` from `@ngneat/tailwind` in your `webpack.config`
 - Import your **TailwindCSS** config in your `webpack.config`
 - Before you return or modify the original Webpack config, call `patchPostCSS` with the following parameters:
   - `webpackConfig`: the Webpack config
   - `tailwindConfig`: the TailwindCSS config that you import
-  - `components?`: this flag will enable using TailwindCSS directives in components' stylesheets. Default to `false` because turning it on might impact your build time
+  - `patchComponentsStyles?`: this flag will enable using TailwindCSS directives in components' stylesheets. Default to `false` because turning it on might impact your build time
 
 ```js
 // example
-const { patchPostCSS } = require('@ngneat/tailwind');
+const { addTailwindConfig } = require('@ngneat/tailwind');
 const tailwindConfig = require('relative/path/to/tailwind.config');
 
 module.exports = (config) => {
-  patchPostCSS(config, tailwindConfig, true);
+  addTailwindConfig({
+    webpackConfig: config,
+    tailwindConfig,
+    patchComponentsStyles: true
+  });
   return config;
 }
 ```
@@ -64,6 +77,10 @@ is [postcss-purgecss](https://github.com/FullHuman/purgecss/tree/master/packages
 default, `@ngneat/tailwind` sets the `content` to any **HTML** and any **TS** files in the project.
 
 This behavior can be modified as the consumers see fit.
+
+## CSS Preprocessors
+
+If you're using CSS Preprocessors (SASS/SCSS, LESS, Stylus) in your application, please check out [TailwindCSS's Using with Preprocessors guide](https://tailwindcss.com/docs/using-with-preprocessors#using-sass-less-or-stylus)
 
 ## Contributing
 

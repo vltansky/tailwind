@@ -37,13 +37,14 @@ export default function (options: TailwindSchematicsOptions): Rule {
       context.addTask(new RunSchematicTask('nx-setup', options));
       return tree;
     }
-    const normalizedOptions = normalizeOptionsNg(options, tree);
 
-    return chain([
-      addPackageJsonDependencies(normalizedOptions.dependencies),
-      installDependencies(),
-      setupProject(normalizedOptions),
-    ])(tree, context);
+    return normalizeOptionsNg(options, tree).then((normalizedOptions) =>
+      chain([
+        addPackageJsonDependencies(normalizedOptions.dependencies),
+        installDependencies(),
+        setupProject(normalizedOptions),
+      ])
+    ) as ReturnType<Rule>;
   };
 }
 
