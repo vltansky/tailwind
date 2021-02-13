@@ -15,7 +15,7 @@ export function addTailwindPlugin({
     console.error('Missing tailwind config :', tailwindConfig);
     return;
   }
-  if (tailwindConfig.purge && tailwindConfig.purge.enabled == null) {
+  if (tailwindConfig.purge && typeof tailwindConfig.purge.enabled === 'undefined') {
     tailwindConfig.purge.enabled = webpackConfig.mode === 'production';
   }
   const pluginName = 'autoprefixer';
