@@ -23,7 +23,6 @@ import {
   getLatestNodeVersion,
   isNx,
   updateProjectRootStyles,
-  updateWorkspaceTargets,
 } from '../../utils';
 import { normalizeOptionsNg } from '../../utils/normalize-options-ng';
 import { updateIndexHtml } from '../../utils/update-index-html';
@@ -80,10 +79,6 @@ function installDependencies(): Rule {
 function setupProject(options: NormalizedTailwindSchematicsOptions): Rule {
   return chain([
     addConfigFiles(options),
-    updateWorkspaceTargets(
-      options.project,
-      (updateWorkspace as unknown) as typeof updateNxWorkspace
-    ),
     updateProjectRootStyles(
       options.project,
       (getWorkspace as unknown) as typeof getNxWorkspace,

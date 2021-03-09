@@ -4,7 +4,6 @@ import {
 } from '@angular-devkit/schematics/testing';
 import { join } from 'path';
 import { get } from 'lodash';
-import { DEPENDENCIES } from '../../constants';
 
 const schematicsTestOptions = {
   'nx-setup': {
@@ -95,9 +94,7 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
     });
 
     function assertDefaultPackages(packageJsonString: string) {
-      DEPENDENCIES.forEach((dep) => {
-        expect(packageJsonString).toContain(dep);
-      });
+      expect(packageJsonString).toContain('tailwindcss');
     }
 
     it('should add proper packages to devDependencies', async (done) => {
@@ -111,23 +108,6 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
       const packageJson = tree.readContent('./package.json');
       expect(packageJson).toBeTruthy();
       assertDefaultPackages(packageJson);
-      done();
-    });
-
-    it('should update angular.json to use custom-webpack', async (done) => {
-      const tree = await schematicRunner
-        .runSchematicAsync(
-          schematic,
-          { style: 'scss', project: 'foo' },
-          appTree
-        )
-        .toPromise();
-      const angularJson = tree.readContent('./angular.json');
-      expect(angularJson).toBeTruthy();
-      expect(angularJson).toContain('@angular-builders/custom-webpack:browser');
-      expect(angularJson).toContain(
-        '@angular-builders/custom-webpack:dev-server'
-      );
       done();
     });
 
@@ -147,7 +127,7 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
       done();
     });
 
-    it('should add webpack config and tailwind config to root', async (done) => {
+    it('should add tailwind config to root', async (done) => {
       const tree = await schematicRunner
         .runSchematicAsync(
           schematic,
@@ -156,7 +136,6 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
         )
         .toPromise();
       expect(tree.exists('./tailwind.config.js')).toEqual(true);
-      expect(tree.exists('./webpack.config.js')).toEqual(true);
       expect(tree.readContent('./tailwind.config.js')).toContain(
         `darkMode: false`
       );

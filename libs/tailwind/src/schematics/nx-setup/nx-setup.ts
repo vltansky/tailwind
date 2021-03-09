@@ -15,7 +15,6 @@ import {
   getLatestNodeVersion,
   isNx,
   updateProjectRootStyles,
-  updateWorkspaceTargets,
 } from '../../utils';
 import { normalizeOptionsNx } from '../../utils/normalize-options-nx';
 import { updateIndexHtml } from '../../utils/update-index-html';
@@ -35,7 +34,6 @@ export default function (options: TailwindSchematicsOptions): Rule {
     return chain([
       addDependenciesToPackageJson(normalizedOptions.dependencies),
       addConfigFiles(normalizedOptions),
-      updateWorkspaceTargets(normalizedOptions.projectName, updateWorkspace),
       updateProjectRootStyles(
         normalizedOptions.projectName,
         getWorkspace,

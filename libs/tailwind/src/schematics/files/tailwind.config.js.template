@@ -1,5 +1,8 @@
+const { guessProductionMode } = require("@ngneat/tailwind");
+
 module.exports = {
     prefix: '',
+    enabled: guessProductionMode(),
     purge: {
       content: [<% if (appsDir) {%>
         './<%= appsDir %>/**/*.{html,ts}',<% } else {%>

@@ -1,5 +1,3 @@
-import { DEPENDENCIES } from '../constants';
-
 export function getDependencies(
   plugins: string | string[] = []
 ): { dependencies: string[]; plugins: string[] } {
@@ -7,7 +5,7 @@ export function getDependencies(
   const pluginPackages = pluginArray?.map((plugin) => `@tailwindcss/${plugin}`);
 
   return {
-    dependencies: [...DEPENDENCIES, ...pluginPackages],
+    dependencies: ['tailwindcss', ...pluginPackages],
     plugins: pluginPackages.map((pkg) => `require('${pkg}')`),
   };
 }
