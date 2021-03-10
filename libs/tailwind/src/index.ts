@@ -1,1 +1,1 @@
-export * from './is-production';
+export * from './purge-flag';

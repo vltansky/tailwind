@@ -20,12 +20,6 @@
       "default": "none",
       "x-prompt": "Would you like to enable dark mode?"
     },
-    "enableTailwindInComponentsStyles": {
-      "description": "Whether to use tailwind directives & functions in component styles? (might increase build time)",
-      "type": "boolean",
-      "default": false,
-      "x-prompt": "Would you like to use tailwind directives & functions in component styles? (might increase build time)"
-    },
     "plugins": {
       "oneOf": [
         {

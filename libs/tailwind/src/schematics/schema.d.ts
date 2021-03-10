@@ -3,7 +3,6 @@ export type TailwindDarkMode = 'none' | 'class' | 'media';
 export interface TailwindSchematicsOptions {
   project: string;
   darkMode: TailwindDarkMode;
-  enableTailwindInComponentsStyles: boolean;
   plugins: string | string[];
 }
 
