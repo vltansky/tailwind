@@ -26,6 +26,9 @@ async function assertNx(schematicName: 'nx-setup' | 'ng-add') {
 
   await runNxCommandAsync(`generate @ngneat/tailwind:${schematicName}`);
 
+  expect(() =>
+    checkFilesExist('tailwind.config.js')
+  ).not.toThrow();
   // expect(() => runNxCommandAsync('run sub-nx-test:serve').then()).not.toThrow();
 }
 
