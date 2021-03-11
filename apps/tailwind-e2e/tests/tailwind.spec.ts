@@ -27,9 +27,8 @@ async function assertNx(schematicName: 'nx-setup' | 'ng-add') {
   await runNxCommandAsync(`generate @ngneat/tailwind:${schematicName}`);
 
   expect(() =>
-    checkFilesExist('tailwind.config.js', 'webpack.config.js')
+    checkFilesExist('tailwind.config.js')
   ).not.toThrow();
-
   // expect(() => runNxCommandAsync('run sub-nx-test:serve').then()).not.toThrow();
 }
 
@@ -67,10 +66,6 @@ describe('tailwind e2e', () => {
   it('should work with Angular CLI project', async (done) => {
     ensureNgProject(pluginNpmName, pluginDistPath);
     await runCommandAsync(`ng add @ngneat/tailwind`);
-
-    expect(() =>
-      checkFilesExist('tailwind.config.js', 'webpack.config.js')
-    ).not.toThrow();
 
     expect(() => runCommandAsync('ng serve').then()).not.toThrow();
 
