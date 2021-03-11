@@ -67,6 +67,10 @@ describe('tailwind e2e', () => {
     ensureNgProject(pluginNpmName, pluginDistPath);
     await runCommandAsync(`ng add @ngneat/tailwind`);
 
+    expect(() =>
+      checkFilesExist('tailwind.config.js')
+    ).not.toThrow();
+
     expect(() => runCommandAsync('ng serve').then()).not.toThrow();
 
     done();
