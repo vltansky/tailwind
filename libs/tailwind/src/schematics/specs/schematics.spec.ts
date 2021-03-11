@@ -119,7 +119,7 @@ Object.entries(schematicsTestOptions).forEach(([schematic, options]) => {
       const content = tree.readContent(stylesFile);
       const check = content.includes('tailwind');
       if(!check){
-        throw `didnt find tailwindcss imports in ${stylesFile}`;
+        throw `Could not find tailwindcss imports in ${stylesFile}`;
       }
     }
 

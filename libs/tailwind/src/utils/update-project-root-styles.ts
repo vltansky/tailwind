@@ -25,10 +25,9 @@ export function updateProjectRootStyles(
 
       if (styleFilePath) {
         return addTailwindToStylesFile(styleFilePath);
-      } else {
-        addTailwindToAngularJson(targetOptions, tree);
-        return updateWorkspace(workspace);
       }
+      addTailwindToAngularJson(targetOptions, tree);
+      return updateWorkspace(workspace);
     }) as ReturnType<Rule>;
   };
 }
@@ -104,19 +103,6 @@ function getProjectStyleFile(
     if (defaultMainStylePath) {
       return normalize(defaultMainStylePath);
     }
-
-    // If no default style file could be found, use the first style file that matches the given
-    // extension. If no extension specified explicitly, we look for any file with a valid style
-    // file extension.
-    // const fallbackStylePath = styles.find((file) =>
-    //   extension
-    //     ? file.endsWith(`.${extension}`)
-    //     : validStyleFileRegex.test(file)
-    // );
-
-    // if (fallbackStylePath) {
-    //   return normalize(fallbackStylePath);
-    // }
 
     return '';
   }

@@ -22,13 +22,12 @@ export function checkStylesFile(stylesFile){
   const content = readFile(stylesFile);
   const check = content.includes('tailwind');
   if(!check){
-    throw `didnt find tailwindcss imports in ${stylesFile}`;
+    throw `Could not find tailwindcss imports in ${stylesFile}`;
   }
 }
 
 export function checkStylesConfig(shouldBeNodeModule = true){
   const workspace = readJson('angular.json');
-  console.log()
   const isNodeModule = !!workspace.projects.proj.architect.build.options.styles.find(v=>v.includes('node_modules/tailwindcss/tailwind.css'));
   if(shouldBeNodeModule && isNodeModule){
     return true;
@@ -39,5 +38,4 @@ export function checkStylesConfig(shouldBeNodeModule = true){
 export function removeTailwindFiles(){
   const localProj = path.join(`./tmp/nx-e2e`, 'proj',);
   removeSync(path.join(localProj, 'tailwind.config.js'));
-  removeSync(path.join(localProj, 'webpack.config.js'));
 }
