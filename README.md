@@ -29,8 +29,8 @@ same as above. If you setup your Nx Workspace with `NxCLI`, follow the steps:
 Install `@ngneat/tailwind` first:
 
 ```
-npm i -D @ngneat/tailwind
-yarn add -D @ngneat/tailwind
+npm i -D @ngneat/tailwind tailwindcss postcss
+yarn add -D @ngneat/tailwind tailwindcss postcss
 ```
 
 then execute the schematics:
@@ -43,7 +43,7 @@ nx generate @ngneat/tailwind:nx-setup
 
 If your projects are already using a custom **Webpack** builder with a custom `webpack.config`, follow these steps to add **TailwindCSS** to your project
 
-- `npm i -D @ngneat/tailwind postcss` (or `yarn add -D @ngneat/tailwind postcss`)
+- `npm i -D @ngneat/tailwind tailwindcss` (or `yarn add -D @ngneat/tailwind tailwindcss`)
 - Import `addTailwindPlugin` from `@ngneat/tailwind` in your `webpack.config`
 - Import your **TailwindCSS** config in your `webpack.config`
 - Before you return or modify the original Webpack config, call `addTailwindPlugin` with the following parameters:
