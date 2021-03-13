@@ -7,7 +7,6 @@ import {
 import {
   addDepsToPackageJson,
   getWorkspace,
-  InsertChange,
   updateWorkspace,
 } from '@nrwl/workspace';
 import {
@@ -37,7 +36,7 @@ export default function (options: TailwindSchematicsOptions): Rule {
       updateProjectRootStyles(
         normalizedOptions.projectName,
         getWorkspace,
-        InsertChange
+        updateWorkspace
       ),
       updateIndexHtml(
         normalizedOptions.projectName,

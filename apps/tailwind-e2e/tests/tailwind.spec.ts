@@ -1,6 +1,9 @@
 import {
   checkFilesExist,
   cleanup,
+  readFile,
+  renameFile,
+  runCommand,
   runCommandAsync,
   runNxCommandAsync,
 } from '@nrwl/nx-plugin/testing';
@@ -8,7 +11,7 @@ import {
   detectPackageManager,
   getPackageManagerInstallCommand,
 } from '@nrwl/workspace/src/utils/detect-package-manager';
-import { ensureNgProject, ensureNxProject, remove } from '../utils';
+import { checkStylesConfig, checkStylesFile, createStylesFiles, ensureNgProject, ensureNxProject, removeTailwindFiles, useStylesConfig, remove } from '../utils';
 
 jest.setTimeout(999999);
 
@@ -74,5 +77,52 @@ describe('tailwind e2e', () => {
     expect(() => runCommandAsync('ng serve').then()).not.toThrow();
 
     done();
+  });
+
+  describe('styles', () => {
+    beforeAll(() => {
+      ensureNgProject(pluginNpmName, pluginDistPath);
+      createStylesFiles();
+    });
+
+    test.each([
+      'global.css',
+      'global.scss',
+      'global.less',
+      'styles.less',
+      'styles.css'
+    ])('should patch %s', (name) => {
+      const fileName = `src/${name}`;
+      useStylesConfig([fileName]);
+      runCommand(`ng add @ngneat/tailwind --defaults`);
+
+      expect(() =>
+        checkStylesFile(fileName)
+      ).not.toThrow();
+    })
+
+    afterEach(() => {
+      removeTailwindFiles();
+    })
+
+    describe('wrong.css', () =>{
+      beforeAll(async() => {
+        useStylesConfig(['src/wrong.css']);
+        await runCommandAsync(`ng add @ngneat/tailwind --defaults`);
+      });
+
+      it('should not patch wrong.css', () => {
+        expect(() =>
+          checkStylesFile('src/wrong.css')
+        ).toThrow();
+      });
+
+      it('should set styles config to node_modules/tailwindcss/tailwind.css', async () => {
+        expect(() =>
+          checkStylesConfig(true)
+        ).not.toThrow();
+      });
+
+    })
   });
 });

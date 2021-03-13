@@ -5,10 +5,8 @@ import {
 } from '@angular-devkit/schematics/tasks';
 import type {
   getWorkspace as getNxWorkspace,
-  InsertChange as NxInsertChange,
   updateWorkspace as updateNxWorkspace,
 } from '@nrwl/workspace';
-import { InsertChange } from '@schematics/angular/utility/change';
 import {
   addPackageJsonDependency,
   NodeDependency,
@@ -82,7 +80,7 @@ function setupProject(options: NormalizedTailwindSchematicsOptions): Rule {
     updateProjectRootStyles(
       options.project,
       (getWorkspace as unknown) as typeof getNxWorkspace,
-      (InsertChange as unknown) as typeof NxInsertChange
+      (updateWorkspace as unknown) as typeof updateNxWorkspace
     ),
     updateIndexHtml(
       options.project,
