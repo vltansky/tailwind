@@ -36,6 +36,8 @@ ng add @ngneat/tailwind
 
 ## Usage with Nx
 
+> IMPORTANT for AngularCLI users: As of April 06 2021, `create-nx-workspace@latest` still generates Angular with AngularCLI 11.0.7 which does not have built-in TailwindCSS support. Please update AngularCLI by running `ng update @angular/cli` before running this schematics.
+
 In Nx, you can either use `AngularCLI` or `NxCLI`. If you set up your Nx Workspace to use `AngularCLI`, the usage is the same as above. If you set up your Nx Workspace with `NxCLI`, follow the steps:
 
 Install `@ngneat/tailwind` first:
