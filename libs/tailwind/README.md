@@ -173,7 +173,6 @@ Thanks goes to these wonderful people
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-
 <table>
   <tr>
     <td align="center"><a href="https://nartc.me/"><img src="https://avatars1.githubusercontent.com/u/25516557?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Chau Tran</b></sub></a><br /><a href="#question-nartc" title="Answering Questions">💬</a> <a href="https://github.com/ngneat/tailwind/commits?author=nartc" title="Code">💻</a> <a href="https://github.com/ngneat/tailwind/commits?author=nartc" title="Documentation">📖</a> <a href="#ideas-nartc" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/ngneat/tailwind/pulls?q=is%3Apr+reviewed-by%3Anartc" title="Reviewed Pull Requests">👀</a></td>
@@ -183,6 +182,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/beeman"><img src="https://avatars3.githubusercontent.com/u/36491?v=4?s=75" width="75px;" alt=""/><br /><sub><b>beeman</b></sub></a><br /><a href="#ideas-beeman" title="Ideas, Planning, & Feedback">🤔</a> <a href="#mentoring-beeman" title="Mentoring">🧑‍🏫</a> <a href="https://github.com/ngneat/tailwind/commits?author=beeman" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vltansky"><img src="https://avatars0.githubusercontent.com/u/5851280?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Vlad Tansky</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=vltansky" title="Code">💻</a></td>
     <td align="center"><a href="https://abhinav.xyz/"><img src="https://avatars2.githubusercontent.com/u/10206236?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Abhinav Dinesh C</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=abhinavdc" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://lacolaco.net/"><img src="https://avatars.githubusercontent.com/u/1529180?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Suguru Inatomi</b></sub></a><br /><a href="https://github.com/ngneat/tailwind/commits?author=lacolaco" title="Documentation">📖</a></td>
   </tr>
 </table>
 
