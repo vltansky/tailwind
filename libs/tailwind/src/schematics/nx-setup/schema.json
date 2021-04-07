@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/schema",
   "id": "NxSetup",
   "title": "Schematics to setup Tailwind for Angular applications in Nx Workspace (with Nx CLI)",
   "type": "object",
@@ -12,6 +12,12 @@
         "index": 0
       },
       "x-prompt": "What project would you like to use? (skip to use default project)"
+    },
+    "enableJit": {
+      "description": "Whether to enable JIT compilation in tailwind.config.js",
+      "type": "boolean",
+      "default": false,
+      "x-prompt": "Would you like to enable Tailwind JIT (preview feature)?"
     },
     "darkMode": {
       "description": "Whether to enable darkMode in tailwind.config.js",
