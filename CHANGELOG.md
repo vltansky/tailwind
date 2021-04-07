@@ -1,3 +1,10 @@
+## [7.0.1](https://github.com/ngneat/tailwind/compare/v7.0.0...v7.0.1) (2021-04-07)
+
+
+### Bug Fixes
+
+* add css and preprocessors file extensions to purge content with jit ([e273d96](https://github.com/ngneat/tailwind/commit/e273d963e6d2e88c5b2feea732dcced87e069191))
+
 # [7.0.0](https://github.com/ngneat/tailwind/compare/v6.0.3...v7.0.0) (2021-04-07)
 
 
