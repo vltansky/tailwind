@@ -1,3 +1,12 @@
+# [7.0.0](https://github.com/ngneat/tailwind/compare/v6.0.3...v7.0.0) (2021-04-07)
+
+
+### Features
+
+* add styles to angular.json or styles file ([#31](https://github.com/ngneat/tailwind/issues/31)) ([05c237b](https://github.com/ngneat/tailwind/commit/05c237bf61c224b6540f1f791564ccc13caa47f2))
+* leveraging angular built-in tailwind support & setting purge.en… ([#80](https://github.com/ngneat/tailwind/issues/80)) ([b47cc36](https://github.com/ngneat/tailwind/commit/b47cc361d2c237aa2aa3e341a84a0d3502c8f8e2))
+* update to Nx11 ([#87](https://github.com/ngneat/tailwind/issues/87)) ([2d0ddee](https://github.com/ngneat/tailwind/commit/2d0ddee6b936781e6ac5602cc3d8da558c6d1486))
+
 ## [6.0.3](https://github.com/ngneat/tailwind/compare/v6.0.2...v6.0.3) (2021-02-01)
 
 
