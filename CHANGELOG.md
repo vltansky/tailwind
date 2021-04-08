@@ -1,3 +1,10 @@
+## [7.0.2](https://github.com/ngneat/tailwind/compare/v7.0.1...v7.0.2) (2021-04-08)
+
+
+### Bug Fixes
+
+* wrap getPackageManager with try catch for older versions ([#91](https://github.com/ngneat/tailwind/issues/91)) ([86039aa](https://github.com/ngneat/tailwind/commit/86039aa8f21a98cc654ac7c1cfd654ead65eb5a7))
+
 ## [7.0.1](https://github.com/ngneat/tailwind/compare/v7.0.0...v7.0.1) (2021-04-07)
 
 
