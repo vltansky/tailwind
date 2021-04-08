@@ -49,12 +49,14 @@ export default function (options: TailwindSchematicsOptions): Rule {
     );
 
     if (!isTailwindSupported) {
-      const tailwindPkg = '@ngneat/tailwind';
-      const tailwindDep = getPackageJsonDependency(tree, tailwindPkg);
+      try{
+        const tailwindPkg = '@ngneat/tailwind';
+        const tailwindDep = getPackageJsonDependency(tree, tailwindPkg);
 
-      if (tailwindDep != null) {
-        execSync(`${getPackageManager(tree.root.path)} rm ${tailwindPkg}`);
-      }
+        if (tailwindDep != null) {
+          execSync(`${getPackageManager(tree.root.path)} rm ${tailwindPkg}`);
+        }
+      }catch(err){}
       context.logger.info(`
 Detected AngularCLI version is ${cliVersion} which does not support TailwindCSS natively.
 Please run "ng add @ngneat/tailwind@6" for Custom Webpack support.
