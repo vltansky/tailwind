@@ -15,6 +15,9 @@ describe('Guess production mode', () => {
     ['ng b', true], // TODO - NX, Ionic - ?
     ['ng serve', false],
     ['ng serve --prod', true],
+    ['\\node_modules\\@nrwl\\cli\\lib\\run-cli.js run project:build:production', true],
+    ['project_build_name\\node_modules\\@nrwl\\cli\\lib\\run-cli.js somecommand', false],
+    ['\\node_modules\\@buider\\cli\\lib\\run-cli.js somecommand', false]
   ])(
     '%s should return %s',
     (command, expected) => {
