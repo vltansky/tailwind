@@ -1,3 +1,10 @@
+## [7.0.3](https://github.com/ngneat/tailwind/compare/v7.0.2...v7.0.3) (2021-04-09)
+
+
+### Bug Fixes
+
+* purge flag nx build command ([#93](https://github.com/ngneat/tailwind/issues/93)) ([ce3dc39](https://github.com/ngneat/tailwind/commit/ce3dc3940a79d9a0a26671c138288beab965d3a8))
+
 ## [7.0.2](https://github.com/ngneat/tailwind/compare/v7.0.1...v7.0.2) (2021-04-08)
 
 
